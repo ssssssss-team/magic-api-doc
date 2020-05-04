@@ -4,7 +4,7 @@
   "description": "新一代接口框架，以XML方式定义接口，不写代码即可完成接口。\r >  **QQ交流群：720832964**",
   "main": "index.js",
   "dependencies": {
-    "vuepress": "^1.0.3",
+    "vuepress": "^1.4.1",
     "webpack-dev-middleware": "^3.6.0"
   },
   "devDependencies": {},

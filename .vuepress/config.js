@@ -2,6 +2,9 @@ module.exports = {
 	title: 'ssssssss',
 	description: '一个无需写代码的接口框架',
 	head: [["link", {rel: "icon", href: `/favicon.ico`}]],
+	markdown:{
+		lineNumbers : true
+	},
 	themeConfig: {
 		docsRepo : 'javamxd/ssssssss',
 		docsDir : '/',
@@ -32,6 +35,10 @@ module.exports = {
 			title : '配置',
 			collapsable: false,
 			children: ['spring-config',"xml-config"]
+		},{
+			title : '高级应用',
+			collapsable: false,
+			children: ['custom-page',"custom-validator"]
 		}]
     }
 }

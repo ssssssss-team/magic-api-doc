@@ -2,6 +2,7 @@
 完整xml参考：
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE ssssssss PUBLIC "-//ssssssss.org//DTD ssssssss 0.1//EN" "http://ssssssss.org/dtd/0.0.x/ssssssss.dtd">
 <!-- 定义访问路径 -->
 <ssssssss request-mapping="/user">
     <!-- 定义sql片段 -->

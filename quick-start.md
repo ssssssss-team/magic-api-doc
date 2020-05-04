@@ -26,6 +26,7 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 在`src/main/resources/ssssssss/`下建立`user.xml`文件
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE ssssssss PUBLIC "-//ssssssss.org//DTD ssssssss 0.1//EN" "http://ssssssss.org/dtd/0.0.x/ssssssss.dtd">
 <ssssssss request-mapping="/user">
     <!-- 访问地址/user/list,访问方法get,并开启分页 -->
     <select-list request-mapping="/list" request-method="get" page="true">
