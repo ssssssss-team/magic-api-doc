@@ -5,6 +5,7 @@
 /**
  * 分页对象默认提取接口
  */
+@Component
 public class MyPageProvider implements PageProvider {
 
     /**
@@ -18,14 +19,6 @@ public class MyPageProvider implements PageProvider {
         return new Page((page - 1) * pageSize, pageSize);
 
     }
-}
-```
-
-随后在代码中添加
-```java
-@Bean
-public PageProvider pageProvider() {
-    return new MyPageProvider();
 }
 ```
 
