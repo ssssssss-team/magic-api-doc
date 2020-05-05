@@ -34,11 +34,15 @@ module.exports = {
 		},{
 			title : '配置',
 			collapsable: false,
-			children: ['spring-config',"xml-config"]
+			children: ['spring-config','xml-config']
 		},{
 			title : '高级应用',
 			collapsable: false,
-			children: ['custom-page',"custom-validator"]
+			children: ['custom-page','custom-validator']
+		},{
+			title : 'FAQ',
+			collapsable: false,
+			children: ['faq']
 		}]
     }
 }

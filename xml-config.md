@@ -38,7 +38,7 @@
         </if>
         order by create_date desc
     </select-list>
-    <!-- 返回List<String>结构 -->
+    <!-- 返回String -->
     <select-one request-mapping="/one" request-method="get" return-type="string">
         select username from sys_user where id = #{id}
     </select-one>
@@ -73,6 +73,28 @@
 ```xml
 <include refid="common-columns"/>
 ```
+
+## foreach
+- `collection` : 集合，必填项
+- `item` : item，必填项
+- `open` : 拼接起始SQL，选填
+- `close` : 拼接结束SQL，选填
+- `separator` : 分隔符，选填
+与`Mybatis`的用法一致，用来循环拼接SQL
+```xml
+<foreach collection="body.userIds" item="userId" open="(" close=")" separator=",">
+    #{userId}
+</foreach>
+```
+## if
+- `test` : 判断条件，必填项
+与`Mybatis`一致,用来判断，当条件成立时拼接if标签里的内容
+```xml
+<if test="userId != null and userId != ''">
+ and user_id = #{userId}
+</if>
+```
+
 
 ## select-list
 - `id`: `String`(定义Id)
