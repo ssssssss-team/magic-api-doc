@@ -35,6 +35,7 @@
         value CDATA #REQUIRED>
 <!ELEMENT update (#PCDATA|include|foreach)*>
 <!ATTLIST update
+        request-body (true) #IMPLIED
         request-mapping CDATA #IMPLIED
         request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
         return-type (int|double|long|boolean) #IMPLIED
@@ -54,6 +55,7 @@
         test CDATA #REQUIRED>
 <!ELEMENT insert (#PCDATA|include|foreach)*>
 <!ATTLIST insert
+        request-body (true) #IMPLIED
         request-mapping CDATA #IMPLIED
         request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
         return-type (int|double|long|boolean) #IMPLIED
@@ -61,6 +63,7 @@
         id CDATA #IMPLIED>
 <!ELEMENT delete (include|foreach)*>
 <!ATTLIST delete
+        request-body (true) #IMPLIED
         request-mapping CDATA #IMPLIED
         request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
         return-type (int|double|long|boolean) #IMPLIED
@@ -71,6 +74,7 @@
         request-mapping CDATA #IMPLIED
         request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
         page (true) #IMPLIED
+        request-body (true) #IMPLIED
         return-type (string|map|int|long|double) #IMPLIED
         id CDATA #IMPLIED
         validate CDATA #IMPLIED>
@@ -79,6 +83,7 @@
         request-mapping CDATA #IMPLIED
         request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
         return-type (string|map|int|long|double) #IMPLIED
+        request-body (true) #IMPLIED
         id CDATA #IMPLIED
         validate CDATA #IMPLIED>
 <!ELEMENT function (java|execute-sql)*>
@@ -86,6 +91,7 @@
         request-mapping CDATA #IMPLIED
         request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
         id CDATA #IMPLIED
+        request-body (true) #IMPLIED
         validate CDATA #IMPLIED>
 <!ELEMENT java (value)*>
 <!ATTLIST java
