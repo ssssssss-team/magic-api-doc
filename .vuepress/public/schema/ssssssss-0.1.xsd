@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns="http://ssssssss.org/schema"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://ssssssss.org/schema"
+        elementFormDefault="qualified">
+    <xs:element name="ssssssss">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="sql"/>
+                <xs:element ref="validate"/>
+                <xs:element ref="update"/>
+                <xs:element ref="insert"/>
+                <xs:element ref="delete"/>
+                <xs:element ref="select-list"/>
+                <xs:element ref="select-one"/>
+                <xs:element ref="function"/>
+            </xs:choice>
+            <xs:attribute name="request-mapping"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sql">
+        <xs:complexType mixed="true">
+            <xs:attribute name="id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="validate">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="param"/>
+            </xs:sequence>
+            <xs:attribute name="id" use="required"/>
+            <xs:attribute name="code"/>
+            <xs:attribute name="message"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="param">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="not-null"/>
+                <xs:element ref="max-len"/>
+                <xs:element ref="min-len"/>
+                <xs:element ref="regx"/>
+            </xs:choice>
+            <xs:attribute name="code"/>
+            <xs:attribute name="message"/>
+            <xs:attribute name="name" use="required"/>
+            <xs:attribute name="value"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="not-null">
+        <xs:complexType mixed="true">
+            <xs:attribute name="value"/>
+            <xs:attribute name="code"/>
+            <xs:attribute name="message"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="max-len">
+        <xs:complexType mixed="true">
+            <xs:attribute name="value" use="required"/>
+            <xs:attribute name="code"/>
+            <xs:attribute name="message"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="min-len">
+        <xs:complexType mixed="true">
+            <xs:attribute name="value" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="regx">
+        <xs:complexType mixed="true">
+            <xs:attribute name="value" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="update">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="include"/>
+                <xs:element ref="foreach"/>
+            </xs:choice>
+            <xs:attribute name="request-body">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                        <xs:enumeration value="false"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="request-mapping"/>
+            <xs:attribute name="request-method">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                        <xs:enumeration value="head"/>
+                        <xs:enumeration value="put"/>
+                        <xs:enumeration value="delete"/>
+                        <xs:enumeration value="options"/>
+                        <xs:enumeration value="trace"/>
+                        <xs:enumeration value="patch"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="return-type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="int"/>
+                        <xs:enumeration value="double"/>
+                        <xs:enumeration value="long"/>
+                        <xs:enumeration value="boolean"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="validate"/>
+            <xs:attribute name="id"/>
+            <xs:anyAttribute processContents="skip"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="include">
+        <xs:complexType mixed="true">
+            <xs:attribute name="refid" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="foreach">
+        <xs:complexType mixed="true">
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="if"/>
+            </xs:sequence>
+            <xs:attribute name="close"/>
+            <xs:attribute name="collection" use="required"/>
+            <xs:attribute name="item"/>
+            <xs:attribute name="open"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="if">
+        <xs:complexType mixed="true">
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="foreach"/>
+            </xs:sequence>
+            <xs:attribute name="test" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="insert">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="include"/>
+                <xs:element ref="foreach"/>
+            </xs:choice>
+            <xs:attribute name="datasource"/>
+            <xs:attribute name="request-body">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                        <xs:enumeration value="false"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="request-mapping"/>
+            <xs:attribute name="request-method">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                        <xs:enumeration value="head"/>
+                        <xs:enumeration value="put"/>
+                        <xs:enumeration value="delete"/>
+                        <xs:enumeration value="options"/>
+                        <xs:enumeration value="trace"/>
+                        <xs:enumeration value="patch"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="return-type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="int"/>
+                        <xs:enumeration value="double"/>
+                        <xs:enumeration value="long"/>
+                        <xs:enumeration value="boolean"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="validate"/>
+            <xs:attribute name="id"/>
+            <xs:anyAttribute processContents="skip"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="delete">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="include"/>
+                <xs:element ref="foreach"/>
+            </xs:choice>
+            <xs:attribute name="request-body">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                        <xs:enumeration value="false"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="datasource"/>
+            <xs:attribute name="request-mapping"/>
+            <xs:attribute name="request-method">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                        <xs:enumeration value="head"/>
+                        <xs:enumeration value="put"/>
+                        <xs:enumeration value="delete"/>
+                        <xs:enumeration value="options"/>
+                        <xs:enumeration value="trace"/>
+                        <xs:enumeration value="patch"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="return-type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="int"/>
+                        <xs:enumeration value="double"/>
+                        <xs:enumeration value="long"/>
+                        <xs:enumeration value="boolean"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="validate"/>
+            <xs:attribute name="id"/>
+            <xs:anyAttribute processContents="skip"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="select-list">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="include"/>
+                <xs:element ref="foreach"/>
+                <xs:element ref="if"/>
+            </xs:choice>
+            <xs:attribute name="datasource"/>
+            <xs:attribute name="request-mapping"/>
+            <xs:attribute name="request-method">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                        <xs:enumeration value="head"/>
+                        <xs:enumeration value="put"/>
+                        <xs:enumeration value="delete"/>
+                        <xs:enumeration value="options"/>
+                        <xs:enumeration value="trace"/>
+                        <xs:enumeration value="patch"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="page">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="request-body">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="return-type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="string"/>
+                        <xs:enumeration value="map"/>
+                        <xs:enumeration value="int"/>
+                        <xs:enumeration value="long"/>
+                        <xs:enumeration value="double"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="id"/>
+            <xs:attribute name="validate"/>
+            <xs:anyAttribute processContents="skip"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="select-one">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="include"/>
+                <xs:element ref="foreach"/>
+                <xs:element ref="if"/>
+            </xs:choice>
+            <xs:attribute name="datasource"/>
+            <xs:attribute name="request-mapping"/>
+            <xs:attribute name="request-method">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                        <xs:enumeration value="head"/>
+                        <xs:enumeration value="put"/>
+                        <xs:enumeration value="delete"/>
+                        <xs:enumeration value="options"/>
+                        <xs:enumeration value="trace"/>
+                        <xs:enumeration value="patch"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="return-type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="string"/>
+                        <xs:enumeration value="map"/>
+                        <xs:enumeration value="int"/>
+                        <xs:enumeration value="long"/>
+                        <xs:enumeration value="double"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="request-body">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="id"/>
+            <xs:attribute name="validate"/>
+            <xs:anyAttribute processContents="skip"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="function">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="java"/>
+                <xs:element ref="execute-sql"/>
+            </xs:choice>
+            <xs:attribute name="request-mapping"/>
+            <xs:attribute name="request-method">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                        <xs:enumeration value="head"/>
+                        <xs:enumeration value="put"/>
+                        <xs:enumeration value="delete"/>
+                        <xs:enumeration value="options"/>
+                        <xs:enumeration value="trace"/>
+                        <xs:enumeration value="patch"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="id"/>
+            <xs:attribute name="request-body">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                        <xs:enumeration value="false"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="validate"/>
+            <xs:anyAttribute processContents="skip"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="java">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="value"/>
+            </xs:sequence>
+            <xs:attribute name="class" use="required"/>
+            <xs:attribute name="method" use="required"/>
+            <xs:attribute name="return"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="value">
+        <xs:complexType mixed="true">
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="execute-sql">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="param"/>
+            </xs:sequence>
+            <xs:attribute name="id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
