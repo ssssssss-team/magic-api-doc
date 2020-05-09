@@ -53,7 +53,7 @@ module.exports = {
 		},{
 			title : '高级应用',
 			collapsable: false,
-			children: ['custom-page','custom-validator']
+			children: ['custom-page','custom-validator','custom-interceptor','dynamic-datasource']
 		},{
 			title : 'FAQ',
 			collapsable: false,

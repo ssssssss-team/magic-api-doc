@@ -103,6 +103,7 @@
 - `page` : `boolean`(是否开启分页,默认不开启)
 - `return-type` : `string`(返回值类型，可选值(int,double,long,string,map) 默认map)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
+- `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
 ```xml
 <select-list request-mapping="/user/list" page="true" validate="rule1">
     select * from sys_user
@@ -115,6 +116,7 @@
 - `request-method` : `String`(限制请求方法)
 - `return-type` : `string`(返回值类型，可选值(int,double,long,string,map) 默认map)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
+- `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
 ```xml
 <select-one id="user-name" request-mapping="/user/name" return-type="string">
     select username from sys_user where id = #{id}
@@ -126,6 +128,7 @@
 - `request-method` : `String`(限制请求方法)
 - `return-type` : `string`(返回值类型，可选值(int,long,string,boolean) 默认int)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
+- `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
 ```xml
 <update request-mapping="/user/update/password" return-type="boolean">
     update sys_user set password = #{password} where id = #{session.userId}
@@ -157,12 +160,15 @@
 - `request-mapping` : `String`(映射请求路径)
 - `request-method` : `String`(限制请求方法)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
+- `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
 - `return` : `string`(调用方法返回值的变量名，供后续使用)
 ### java
 - `class`: `String`(调用目标类名)
 - `method`: `String`(调用目标方法名)
+- `return` : `string`(返回值的变量名，将返回值存入到`RequestContext`上下文中)
 ### execute-sql
 - `id` : `select-list/select-one/update/insert/delete`的`id`
+- `return` : `string`(返回值的变量名，将返回值存入到`RequestContext`上下文中)
 
 ```xml
 <function request-mapping="/test">

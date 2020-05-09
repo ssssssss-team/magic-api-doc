@@ -27,6 +27,12 @@ sidebarDepth: 3
 
 是否开启下划线转驼峰命名
 
+## throw-exception
+- 类型：`boolean`
+- 默认值：`false`
+
+执行出现异常时是否抛出异常，如果抛出异常（默认不抛出异常）
+
 ## page-config
 
 分页配置
