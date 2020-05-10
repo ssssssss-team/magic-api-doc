@@ -122,17 +122,36 @@
     select username from sys_user where id = #{id}
 </select-one>
 ```
-## update/isnert/delete
+## update/delete
 - `id`: `String`(定义Id)
 - `request-mapping` : `String`(映射请求路径)
 - `request-method` : `String`(限制请求方法)
-- `return-type` : `string`(返回值类型，可选值(int,long,string,boolean) 默认int)
+- `return-type` : `string`(返回值类型，可选值(int,long,boolean) 默认int)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
 - `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
 ```xml
 <update request-mapping="/user/update/password" return-type="boolean">
     update sys_user set password = #{password} where id = #{session.userId}
 </update>
+```
+
+## select-key
+- `type` : `string`(类型，可选值`select`或自定义策略)
+- `order` : `string`(可选值(`before`,`after`)默认`before`，执行时机，如执行前查询序列值，或执行后查询序列值)
+- `key` : `string`(主键值，当`order`为`before`时或`type`不为`select`时，可以在`sql`中引用此值)
+
+## insert
+- `id`: `String`(定义Id)
+- `request-mapping` : `string`(映射请求路径)
+- `request-method` : `string`(限制请求方法)
+- `return-type` : `string`(返回值类型，可选值(`int`,`long`,`boolean`,`pk`) 默认int,值写`pk`时，返回主键)
+- `validate` : `string`(定义验证规则，多个用`,`分隔)
+- `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
+```xml
+<insert request-mapping="/user/add" return-type="pk">
+    <select-key type="uuid" key="id"></select-key>
+    insert into sys_user(id,username,password) values(#{id},#{username},#{password})
+</insert>
 ```
 ## validate
 - `id`: `string` 定义节点ID

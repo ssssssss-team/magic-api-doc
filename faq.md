@@ -1,13 +1,15 @@
 # 常见问题
 
-- [如何获取RequestBody中的参数](#如何获取RequestBody中的参数)
-- [如何获取Header中的参数](#如何获取Header中的参数)
-- [如何获取Cookie中的参数](#如何获取Cookie中的参数)
-- [如何获取Session中的参数](#如何获取Session中的参数)
-- [如何获取PathVariable中的参数](#如何获取PathVariable中的参数)
-- [如何打印SQL语句](#如何打印SQL语句)
+- [如何获取RequestBody中的参数](#如何获取requestbody中的参数)
+- [如何获取Header中的参数](#如何获取header中的参数)
+- [如何获取Cookie中的参数](#如何获取cookie中的参数)
+- [如何获取Session中的参数](#如何获取session中的参数)
+- [如何获取PathVariable中的参数](#如何获取pathvariable中的参数)
+- [如何打印SQL语句](#如何打印sql语句)
 - [如何给接口添加权限](#如何给接口添加权限)
-- [${}和#{}的区别](#${}和#{}的区别)
+- [如何返回自增主键](#如何返回自增主键)
+- [插入时如何使用序列](#插入时如何使用序列)
+- [${}和#{}的区别](#和-的区别)
 - [多数据源如何配置](#多数据源如何配置)
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
 
@@ -29,6 +31,23 @@
 ## 如何打印SQL语句
 需要修改配置文件`logging.level.org.ssssssss=debug`
 
+## 如何返回自增主键
+`insert`标签`return-type`值写`pk`时自动返回主键
+```xml
+<insert return-type="pk"></insert>
+```
+
+## 插入时如何使用序列
+```xml
+<!-- return-type必须为pk -->
+<insert request-mapping="" return-type="pk">
+    <!-- oracle 查询序列 -->
+    <select-key key="id" order="before" type="select">
+        select seq_xxxx.nextval from dual    
+    </select-key>
+    insert table_name(id,..........) values(#{id},.........)
+</insert>
+```
 ## 如何给接口添加权限
 
 一般情况采用拦截器实现
