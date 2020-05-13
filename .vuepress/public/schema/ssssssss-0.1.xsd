@@ -140,6 +140,7 @@
             <xs:attribute name="collection" use="required"/>
             <xs:attribute name="item"/>
             <xs:attribute name="open"/>
+            <xs:attribute name="separator"/>
         </xs:complexType>
     </xs:element>
 
