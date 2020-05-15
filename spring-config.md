@@ -21,7 +21,7 @@ sidebarDepth: 3
 
 是否打印banner
 
-## map-underscore-to-camelCase
+## map-underscore-to-camel-case
 - 类型：`boolean`
 - 默认值：`false`
 
@@ -60,3 +60,25 @@ sidebarDepth: 3
 - 默认值:`10`
 
 取不到页大小参数时的默认页大小
+
+## cache-config
+
+缓存配置
+
+### enable
+- 类型:`boolean`
+- 默认值:`false`
+
+是否开启缓存(默认缓存实现是LRU+TTL)
+
+### capacity
+- 类型:`long`
+- 默认值:`10000`
+
+缓存容量
+
+### ttl
+- 类型:`long`
+- 默认值:`-1`
+
+缓存过期时间，默认是`-1`即永不过期

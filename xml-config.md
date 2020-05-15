@@ -23,11 +23,11 @@
         </param>
     </validate>
     <!-- 插入成功返回true,否则返回false -->
-    <insert request-mapping="/add" request-method="post" return-type="boolean" validate="rule1,rule2">
+    <insert request-mapping="/add" request-method="post" return-type="boolean" cache-name="user-cache" validate="rule1,rule2">
         insert into sys_user(username,password,role_id) values(#{username},#{password},#{roleId})
     </insert>
     <!-- 映射路径为/user/list,并开启分页 返回List<Map<String,Object>> -->
-    <select-list request-mapping="/list" request-method="get" page="true">
+    <select-list request-mapping="/list" request-method="get" page="true" cache-name="user-cache">
         select
         <!-- 引用自定义的sql片段 -->
         <include refid="customSql"/>
@@ -39,11 +39,11 @@
         order by create_date desc
     </select-list>
     <!-- 返回String -->
-    <select-one request-mapping="/one" request-method="get" return-type="string">
+    <select-one request-mapping="/one" request-method="get" return-type="string" cache-name="user-cache">
         select username from sys_user where id = #{id}
     </select-one>
     <!-- 返回String -->
-    <select-one request-mapping="/get/{id}" request-method="get" validate="rule3" return-type="string" id="getOne">
+    <select-one request-mapping="/get/{id}" request-method="get" validate="rule3" return-type="string" id="getOne" cache-name="user-cache">
         select username from sys_user where id = #{id}
     </select-one>
 
@@ -104,6 +104,7 @@
 - `return-type` : `string`(返回值类型，可选值(int,double,long,string,map) 默认map)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
 - `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
+- `cache-name` : `string`(使用的缓存名称)
 ```xml
 <select-list request-mapping="/user/list" page="true" validate="rule1">
     select * from sys_user
@@ -117,6 +118,7 @@
 - `return-type` : `string`(返回值类型，可选值(int,double,long,string,map) 默认map)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
 - `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
+- `cache-name` : `string`(使用的缓存名称)
 ```xml
 <select-one id="user-name" request-mapping="/user/name" return-type="string">
     select username from sys_user where id = #{id}
@@ -129,6 +131,7 @@
 - `return-type` : `string`(返回值类型，可选值(int,long,boolean) 默认int)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
 - `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
+- `cache-name` : `string`(使用的缓存名称，当执行update/delete时，将清除该缓存内容)
 ```xml
 <update request-mapping="/user/update/password" return-type="boolean">
     update sys_user set password = #{password} where id = #{session.userId}
@@ -147,6 +150,7 @@
 - `return-type` : `string`(返回值类型，可选值(`int`,`long`,`boolean`,`pk`) 默认int,值写`pk`时，返回主键)
 - `validate` : `string`(定义验证规则，多个用`,`分隔)
 - `request-body` : `boolean`（定义请求是否是RequestBody，是的话，参数采用`#{body.xxx}` 获取）
+- `cache-name` : `string`(使用的缓存名称，当执行insert时，将清除该缓存内容)
 ```xml
 <insert request-mapping="/user/add" return-type="pk">
     <select-key type="uuid" key="id"></select-key>

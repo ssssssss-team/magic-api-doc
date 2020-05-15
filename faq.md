@@ -12,21 +12,22 @@
 - [${}和#{}的区别](#和-的区别)
 - [多数据源如何配置](#多数据源如何配置)
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
+- [如何自定义返回结果](#如何自定义返回结果)
 
 ## 如何获取RequestBody中的参数
-使用`#{body.xxx}`获取`RequestBody`中的参数
+使用`#{body.xxx}`或`${body.xxx}`获取`RequestBody`中的参数
 
 ## 如何获取Header中的参数
-使用`#{header.xxx}`获取`Header`中的参数
+使用`#{header.xxx}`或`${header.xxx}`获取`Header`中的参数
 
 ## 如何获取Cookie中的参数
-使用`#{cookie.xxx}`获取`Cookie`中的参数
+使用`#{cookie.xxx}`或`${cookie.xxx}`获取`Cookie`中的参数
 
 ## 如何获取Session中的参数
-使用`#{session.xxx}`获取`Session`中的参数
+使用`#{session.xxx}`或`{session.xxx}`获取`Session`中的参数
 
 ## 如何获取PathVariable中的参数
-使用`#{PathVariableName}`获取`PathVariable`中的参数
+使用`#{PathVariableName}`或`${PathVariableName}`获取`PathVariable`中的参数
 
 ## 如何打印SQL语句
 需要修改配置文件`logging.level.org.ssssssss=debug`
@@ -105,3 +106,6 @@ XML中使用：
 ## SQL执行报错java.sql.SQLFeatureNotSupportedException: null
 原因：druid版本过低，升级至最新版后即可
 
+## 如何自定义返回结果
+
+通过自定义拦截器拦截返回自己想要的格式，具体定义方法查看[自定义拦截器](./custom-interceptor)

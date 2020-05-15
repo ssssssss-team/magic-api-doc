@@ -121,6 +121,7 @@
             </xs:attribute>
             <xs:attribute name="validate"/>
             <xs:attribute name="id"/>
+            <xs:attribute name="cache-name"/>
             <xs:anyAttribute processContents="skip"/>
         </xs:complexType>
     </xs:element>
@@ -212,6 +213,7 @@
             </xs:attribute>
             <xs:attribute name="validate"/>
             <xs:attribute name="id"/>
+            <xs:attribute name="cache-name"/>
             <xs:anyAttribute processContents="skip"/>
         </xs:complexType>
     </xs:element>
@@ -258,6 +260,7 @@
             </xs:attribute>
             <xs:attribute name="validate"/>
             <xs:attribute name="id"/>
+            <xs:attribute name="cache-name"/>
             <xs:anyAttribute processContents="skip"/>
         </xs:complexType>
     </xs:element>
@@ -312,6 +315,7 @@
             </xs:attribute>
             <xs:attribute name="id"/>
             <xs:attribute name="validate"/>
+            <xs:attribute name="cache-name"/>
             <xs:anyAttribute processContents="skip"/>
         </xs:complexType>
     </xs:element>
@@ -359,6 +363,7 @@
             </xs:attribute>
             <xs:attribute name="id"/>
             <xs:attribute name="validate"/>
+            <xs:attribute name="cache-name"/>
             <xs:anyAttribute processContents="skip"/>
         </xs:complexType>
     </xs:element>
