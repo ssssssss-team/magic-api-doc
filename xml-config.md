@@ -2,9 +2,11 @@
 完整xml参考：
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE ssssssss PUBLIC "-//ssssssss.org//DTD ssssssss 0.1//EN" "http://ssssssss.org/dtd/0.0.x/ssssssss.dtd">
 <!-- 定义访问路径 -->
-<ssssssss request-mapping="/user">
+<magic request-mapping="/user"
+                    xmlns="http://ssssssss.org/schema"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://ssssssss.org/schema http://ssssssss.org/schema/magic-0.1.xsd">
     <!-- 定义sql片段 -->
     <sql id="customSql">
         username,password
@@ -57,7 +59,7 @@
             <param name="id" value="val"/><!-- 覆盖id变量，值采用上面调用java方法的结果 -->
         </execute-sql>
     </function>
-</ssssssss>
+</magic>
 ```
 ## sql
 - `id`： 唯一ID，必填项

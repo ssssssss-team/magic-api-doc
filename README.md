@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/logo.png
+heroImage: /images/magic-api-logo.png
 actionText: 快速开始 →
 actionLink: /intro/
 features:

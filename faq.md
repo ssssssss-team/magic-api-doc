@@ -30,7 +30,7 @@
 使用`#{PathVariableName}`或`${PathVariableName}`获取`PathVariable`中的参数
 
 ## 如何打印SQL语句
-需要修改配置文件`logging.level.org.ssssssss=debug`
+需要修改配置文件`logging.level.org.ssssssss.magicapi=debug`
 
 ## 如何返回自增主键
 `insert`标签`return-type`值写`pk`时自动返回主键

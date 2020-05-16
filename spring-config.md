@@ -1,7 +1,7 @@
 ---
 sidebarDepth: 3
 ---
-# ssssssss
+# magic-api
 
 ## xml-locations
 - 类型：`String[]`

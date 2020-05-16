@@ -1,6 +1,6 @@
 # 简介
 
-ssssssss 是一个接口框架，通过编写XML(类似Mybatis的XML)文件，自动映射成接口
+magic-api 是一个接口框架，通过编写XML(类似Mybatis的XML)文件，自动映射成接口
 
 ## 特性
 -  以XML为基础，自动映射HTTP接口
@@ -18,7 +18,7 @@ ssssssss 是一个接口框架，通过编写XML(类似Mybatis的XML)文件，�
 
 ## 参与贡献
 
-- 贡献代码：代码地址：[Github](https://github.com/javamxd/ssssssss) [Gitee](https://gitee.com/jmxd/ssssssss)，欢迎提交Issue或Pull Requests
+- 贡献代码：代码地址：[Github](https://github.com/ssssssss-team/magic-api) [Gitee](https://gitee.com/ssssssss-team/magic-api)，欢迎提交Issue或Pull Requests
 
-- 维护文档：文档地址：[ssssssss-doc](https://github.com/javamxd/ssssssss-doc)，欢迎参与修订
+- 维护文档：文档地址：[magic-api-doc](https://github.com/ssssssss-team/magic-api-doc)，欢迎参与修订
 
