@@ -11,10 +11,11 @@ public DynamicDataSource dynamicDataSource(){
     return dynamicDataSource;
 }
 ```
-XML中使用：
-```xml
+脚本中使用：
+```js
 <!-- 使用slave数据源，如果不填则使用默认数据源 -->
-<select-list datasource="slave" request-mapping="/list" page="true">
-    select * from sys_user
-</select-list>
+//从slave库中查询
+db.slave.select('select * from sys_user');
+//使用默认数据源
+db.select('select * from sys_user');  
 ```

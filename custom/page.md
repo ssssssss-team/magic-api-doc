@@ -12,7 +12,7 @@ public class MyPageProvider implements PageProvider {
     *   此方法需要根据实际情况替换
     */
     @Override
-    public Page getPage(HttpServletRequest request) {
+    public Page getPage(MagicScriptContext context) {
         long page = 1;
         long pageSize = 100;
         // 计算limit以及offset
@@ -22,4 +22,4 @@ public class MyPageProvider implements PageProvider {
 }
 ```
 
-以上配置会在`ssssssss`中生效，同时自带的获取分页参数会失效
+以上配置会在`magic-api`中生效，同时默认的获取分页参数会失效

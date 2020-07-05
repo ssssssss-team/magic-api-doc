@@ -1,7 +1,7 @@
 module.exports = {
 	title: 'magic-api',
-	description: '一个无需写代码的接口框架',
-	head: [["link", {rel: "icon", href: `/favicon.ico`}]],
+	description: '一个接口快速开发框架',
+	head: [["link", {rel: "icon", href: '/favicon.ico'}]],
 	markdown:{
 		lineNumbers : true
 	},
@@ -45,15 +45,23 @@ module.exports = {
 		sidebar:[{
 			title : '使用教程',
 			collapsable: false,
-			children: ['intro','quick-start','expression']
+			children: ['intro','quick-start','grammer','spring-config']
 		},{
-			title : '配置',
+			title : '案例集',
 			collapsable: false,
-			children: ['spring-config','xml-config']
+			children: ['cases/sql','cases/convert','cases/validate','cases/cache']
+		},{
+			title : '函数库',
+			collapsable: false,
+			children: ['functions/db','functions/assert','functions/log','functions/redis','functions/mongodb']
+		},{
+			title : '函数扩展',
+			collapsable: false,
+			children: ['extension/','extension/object','extension/collection','extension/class']
 		},{
 			title : '高级应用',
 			collapsable: false,
-			children: ['custom-page','custom-validator','custom-interceptor','custom-key','custom-cache','dynamic-datasource']
+			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension']
 		},{
 			title : 'FAQ',
 			collapsable: false,

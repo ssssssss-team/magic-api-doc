@@ -1,37 +1,34 @@
----
-sidebarDepth: 3
----
-# magic-api
+# spring-boot配置
 
-## xml-locations
-- 类型：`String[]`
+## prefix
+- 类型：`String`
 - 默认值：`null`
 
-`ssssssss`所对应的XML文件位置，此项为必填项
+`magic-api.prefix` 接口路径的前缀，可空
 
-## enable-refresh
+### web
+- 类型：`String`
+- 默认值：`null`
+
+`magic-api.web` WEB页面的请求路径，可空，填写时开启，否则不开启，生成环境建议不开启
+
+### banner
 - 类型：`boolean`
 - 默认值：`true`
 
-是否启用自动刷新XML，开发模式建议开启，生产环境建议关闭
+`magic-api.banner` 是否打印banner
 
-## banner
-- 类型：`boolean`
-- 默认值：`true`
-
-是否打印banner
-
-## map-underscore-to-camel-case
+### map-underscore-to-camel-case
 - 类型：`boolean`
 - 默认值：`false`
 
-是否开启下划线转驼峰命名
+`magic-api.map-underscore-to-camel-case` 是否开启下划线转驼峰命名
 
-## throw-exception
+### throw-exception
 - 类型：`boolean`
 - 默认值：`false`
 
-执行出现异常时是否抛出异常，如果抛出异常（默认不抛出异常）
+`magic-api.throw-exception`执行出现异常时是否抛出异常（默认不抛出异常）
 
 ## page-config
 
@@ -41,25 +38,25 @@ sidebarDepth: 3
 - 类型:`string`
 - 默认值:`page`
 
-页码参数名
+`magic-api.page-config.page`页码参数名
 
 ### size
 - 类型:`string`
 - 默认值:`size`
 
-页大小参数名
+`magic-api.page-config.size`页大小参数名
 
 ### default-page
 - 类型:`long`
 - 默认值:`1`
 
-取不到页码参数时的默认页码
+`magic-api.page-config.default-page`取不到页码参数时的默认页码
 
 ### default-size
 - 类型:`long`
 - 默认值:`10`
 
-取不到页大小参数时的默认页大小
+`magic-api.page-config.default-size`取不到页大小参数时的默认页大小
 
 ## cache-config
 
@@ -69,16 +66,27 @@ sidebarDepth: 3
 - 类型:`boolean`
 - 默认值:`false`
 
-是否开启缓存(默认缓存实现是LRU+TTL)
+`magic-api.cache-config.enable`是否开启缓存(默认缓存实现是LRU+TTL)
 
 ### capacity
 - 类型:`long`
 - 默认值:`10000`
 
-缓存容量
+`magic-api.cache-config.capacity`缓存容量
 
 ### ttl
 - 类型:`long`
 - 默认值:`-1`
 
-缓存过期时间，默认是`-1`即永不过期
+`magic-api.cache-config.ttl`缓存过期时间，默认是`-1`即永不过期
+
+## debug-config
+
+DEBUG配置
+
+### timeout
+
+- 类型:`int`
+- 默认值：`60`
+
+`magic-api.debug-config.timeout`DEBUG断点等待时间，单位秒，默认为60秒
