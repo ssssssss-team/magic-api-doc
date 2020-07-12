@@ -6,29 +6,34 @@
 
 `magic-api.prefix` 接口路径的前缀，可空
 
-### web
+## web
 - 类型：`String`
 - 默认值：`null`
 
 `magic-api.web` WEB页面的请求路径，可空，填写时开启，否则不开启，生成环境建议不开启
 
-### banner
+## banner
 - 类型：`boolean`
 - 默认值：`true`
 
 `magic-api.banner` 是否打印banner
 
-### map-underscore-to-camel-case
+## map-underscore-to-camel-case
 - 类型：`boolean`
 - 默认值：`false`
 
 `magic-api.map-underscore-to-camel-case` 是否开启下划线转驼峰命名
 
-### throw-exception
+## throw-exception
 - 类型：`boolean`
 - 默认值：`false`
 
-`magic-api.throw-exception`执行出现异常时是否抛出异常（默认不抛出异常）
+`magic-api.throw-exception` 执行出现异常时是否抛出异常（默认不抛出异常）
+
+## datasource
+- 类型：`String`
+- 默认值：`null`(默认数据源)
+`magic-api.datasource` 接口存储选择的数据源（默认使用默认数据源）
 
 ## page-config
 

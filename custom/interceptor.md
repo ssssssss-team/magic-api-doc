@@ -36,6 +36,18 @@ public class MyInterceptor implements RequestInterceptor {
        // 放开请求，执行后续代码
        return null;
    }
+    /**
+     * 是否允许访问页面按钮（此方法可以不重写，默认允许访问所有按钮）
+     */  
+   @Override
+   public boolean allowVisit(HttpServletRequest request, Authorization authorization) {
+   	   // Authorization.SAVE    保存
+       // Authorization.DETAIL  查看详情
+       // Authorization.RUN     执行
+       // Authorization.DELETE  删除
+       // 不允许执行删除和保存方法
+      return authorization != Authorization.DELETE && authorization != Authorization.SAVE;
+   }
 
 }
 ```

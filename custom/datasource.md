@@ -2,6 +2,7 @@
 
 编写java代码如下：
 ```java
+// 你可以在运行时调用这个对象的put方法进行动态添加数据源
 @Bean
 public DynamicDataSource dynamicDataSource(){
     DynamicDataSource dynamicDataSource = new DynamicDataSource();

@@ -7,7 +7,9 @@
 - [如何获取PathVariable中的参数](#如何获取pathvariable中的参数)
 - [如何打印SQL语句](#如何打印sql语句)
 - [如何给接口添加权限](#如何给接口添加权限)
+- [如何给UI添加权限](#如何给UI添加权限)
 - [${}和#{}的区别](#和-的区别)
+- [如何循环拼接参数](#如何循环拼接参数)
 - [多数据源如何配置](#多数据源如何配置)
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
 - [如何自定义返回结果](#如何自定义返回结果)
@@ -74,8 +76,45 @@ public class PermissionInterceptor implements RequestInterceptor {
 }
 ```
 
+## 如何给UI添加权限
+
+采用`拦截器`实现
+```java
+@Component
+public class UIPermissionInterceptor implements RequestInterceptor {
+    @Override
+    public boolean allowVisit(HttpServletRequest request, Authorization authorization) {
+        // 这里可以根据实际情况进行修改
+        // 不允许执行删除和保存方法
+        return authorization != Authorization.DELETE && authorization != Authorization.SAVE;
+    }
+}
+```
+
+
 ## ${}和#{}的区别
 主要区别在于`${}`用于拼接SQL(会产生SQL注入问题)，`#{}`会替换成占位符（不会产生SQL注入问题），这里的区别于`Mybatis`一致
+
+## 如何循环拼接参数
+两种办法：
+- `in (#{ids})`的语法会自动对集合参数展开
+```js
+var ids = [1,2,3,4,5,6];
+//会自动变成select * from sys_user where id in(?,?,?,?,?,?)
+return db.select('select * from sys_user where id in(#{ids})'); 
+```
+- 循环拼接SQL
+```js
+var list = [1,2,3,4,5];
+var sql = "select * from sys_user where ";
+for(index,item in list){
+    sql = sql + 'id = #{list['+index+']}';
+    if(index + 1 < list.size()){
+        sql = sql + ' or ';
+    }   
+}
+return db.select(sql);
+```
 
 ## 多数据源如何配置
 编写java代码如下：

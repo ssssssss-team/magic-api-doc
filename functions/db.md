@@ -57,3 +57,28 @@ return db.update('delete from sys_user');
 //使用缓存名为user的查询
 return db.cache('user').select('select * from sys_user');
 ``` 
+## transaction
+- 入参：`callback`:`Function`，回调函数，可省略
+- 返回值：`Object`
+- 函数说明：开启事务
+
+- 自动事务
+```javascript
+var val = db.transaction(()=>{
+    var v1 = db.update('...');
+    var v2 = db.update('....');
+    return v2;
+});
+return val;
+```
+- 手动开启事务
+```js
+var tx = db.transaction();  //开启事务
+try{
+    var value = db.update('...');
+    db.commit();    // 提交事务
+    return value;
+}catch(e){
+    db.rollback();  // 回滚事务
+}
+```

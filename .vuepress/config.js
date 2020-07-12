@@ -21,6 +21,9 @@ module.exports = {
 				link : 'https://github.com/ssssssss-team/magic-api'
 			}]
 		},{
+			text : '演示地址',
+			link : 'http://140.143.210.90:9999/magic/web'
+		},{
 			text : '更新日志',
 			link : '/changelog'
 		},{
@@ -49,11 +52,11 @@ module.exports = {
 		},{
 			title : '案例集',
 			collapsable: false,
-			children: ['cases/sql','cases/convert','cases/validate','cases/cache']
+			children: ['cases/sql','cases/transcation','cases/convert','cases/validate','cases/cache']
 		},{
 			title : '函数库',
 			collapsable: false,
-			children: ['functions/db','functions/assert','functions/log','functions/redis','functions/mongodb']
+			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb']
 		},{
 			title : '函数扩展',
 			collapsable: false,
@@ -61,7 +64,7 @@ module.exports = {
 		},{
 			title : '高级应用',
 			collapsable: false,
-			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension']
+			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension','custom/store']
 		},{
 			title : 'FAQ',
 			collapsable: false,
