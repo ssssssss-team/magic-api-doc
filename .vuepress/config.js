@@ -70,5 +70,6 @@ module.exports = {
 			collapsable: false,
 			children: ['faq']
 		}]
-    }
+    },
+	plugins : [require('./plugins/stat')]
 }
