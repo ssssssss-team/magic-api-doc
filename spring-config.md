@@ -95,3 +95,41 @@ DEBUG配置
 - 默认值：`60`
 
 `magic-api.debug-config.timeout`DEBUG断点等待时间，单位秒，默认为60秒
+
+## swagger-config
+
+Swagger 配置
+
+### name
+
+- 类型:`string`
+- 默认值:`MagicAPI接口`
+
+`magic-api.swagger-config.name` 资源名称
+
+### location
+- 类型:`string`
+- 默认值:`/v2/api-docs/magic-api/swagger2.json`
+
+`magic-api.swagger-config.location` 资源位置
+
+### title
+
+- 类型:`string`
+- 默认值:`MagicAPI Swagger Docs`
+
+`magic-api.swagger-config.title` 文档标题
+
+### description
+
+- 类型:`string`
+- 默认值:`MagicAPI 接口信息`
+
+`magic-api.swagger-config.description` 文档描述
+
+### version
+
+- 类型:`string`
+- 默认值:`1.0`
+
+`magic-api.swagger-config.version` 文档版本

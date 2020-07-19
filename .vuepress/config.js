@@ -56,7 +56,7 @@ module.exports = {
 		},{
 			title : '函数库',
 			collapsable: false,
-			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb']
+			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb','functions/response']
 		},{
 			title : '函数扩展',
 			collapsable: false,
@@ -64,7 +64,7 @@ module.exports = {
 		},{
 			title : '高级应用',
 			collapsable: false,
-			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension','custom/store']
+			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension','custom/store','custom/swagger']
 		},{
 			title : 'FAQ',
 			collapsable: false,
