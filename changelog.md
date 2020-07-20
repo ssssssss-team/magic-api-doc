@@ -4,7 +4,7 @@
 ### 新增
 - Oracle建表语句
 ### BUG修复
-- 启动报`ClassNotFoundException : springfox.documentation.swagger.web.SwaggerResourcesProvider`的问题
+- 启动报`ClassNotFoundException : springfox.documentation.swagger.web.SwaggerResourcesProvider`的BUG
 - Swagger配置类循环引用的BUG
 - UI界面中编辑器里无法使用回车键的BUG
 
