@@ -1,13 +1,5 @@
 # 更新日志
 
-## [v0.3.1] 2020.07.20
-### 新增
-- Oracle建表语句
-### BUG修复
-- 启动报`ClassNotFoundException : springfox.documentation.swagger.web.SwaggerResourcesProvider`的问题
-- Swagger配置类循环引用的BUG
-- UI界面中编辑器里无法使用回车键的BUG
-
 ## [v0.3.0] 2020.07.19
 
 ### 新增
