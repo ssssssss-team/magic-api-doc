@@ -91,6 +91,7 @@
 |long|`123l`、`123L`|
 |float|`123f`、`123F`|
 |double|`123d`、`123D`|
+|BigDecimal|`123m`、`123M`|
 |boolean|`true`、`false`|
 |string|`'hello'`|
 |string|`"hello"`|

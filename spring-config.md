@@ -35,6 +35,11 @@
 - 默认值：`null`(默认数据源)
 `magic-api.datasource` 接口存储选择的数据源（默认使用默认数据源）
 
+## auto-import-module
+- 类型：`String`
+- 默认值：`db`(默认导入db模块，多个值时用","分隔)
+`magic-api.auto-import-module` 默认导入的模块
+
 ## page-config
 
 分页配置
