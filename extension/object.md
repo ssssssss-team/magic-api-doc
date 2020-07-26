@@ -82,8 +82,8 @@ return obj.asDate('yyyy-MM-dd HH:mm:ss','yyyy-MM-dd HH:mm');
 
 ## asString
 - 入参：`defaultValue`:`String`   选填，当转换失败时返回默认值，默认为`null`
-- 返回值：`short`
-- 函数说明：转对象为`short`类型
+- 返回值：`String`
+- 函数说明：转对象为`String`类型
 ```js
 var obj = 123;
 return obj.asString();
