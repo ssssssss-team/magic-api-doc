@@ -20,6 +20,16 @@ return obj.asDOuble();
 //return obj.asDouble(1.0d); //转换失败时，返回1.0d 
 ```
 
+## asDecimal
+- 入参：`defaultValue`:`BigDecimal`   选填，当转换失败时返回默认值，默认为`null`
+- 返回值：`BigDecimal`
+- 函数说明：转对象为`double`类型
+```js
+var obj = '123.456';
+return obj.asDecimal();
+//return obj.asDecimal(1.5m); //转换失败时，返回1.5m 
+```
+
 ## asFloat
 - 入参：`defaultValue`:`float`   选填，当转换失败时返回默认值，默认为`0.0f`
 - 返回值：`float`
