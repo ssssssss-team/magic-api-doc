@@ -89,3 +89,130 @@ var obj = 123;
 return obj.asString();
 //return obj.asString("empty"); //转换失败时，返回"empty"
 ```
+
+## is <Badge text="0.3.3+" type="error"/>
+- 入参：`type`:`String/Class`   判断是否该类型
+- 返回值：`boolean`
+- 函数说明：判断是否是指定类型
+```js
+import 'java.util.Date' as Date;
+var str = 'hello,MagicAPI';
+return str.is('string'); // true
+return str.is('java.lang.String'); // true
+return str.is('java.lang.Integer'); // false
+return str.is(Date); // false
+```
+
+## isString <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`String`类型
+```js
+var str = 'hello,MagicAPI';
+return str.isString(); // true
+```
+
+## isInt <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`int`类型
+```js
+var value = 123;
+return value.isInt(); // true
+```
+
+## isLong <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`long`类型
+```js
+var value = 123L;
+return value.isLong(); // true
+```
+
+## isDouble <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`double`类型
+```js
+var value = 123d;
+return value.Double(); // true
+```
+
+## isFloat <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`float`类型
+```js
+var value = 123f;
+return value.isFloat(); // true
+```
+
+## isByte <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`byte`类型
+```js
+var value = 123b;
+return value.isByte(); // true
+```
+
+## isBoolean <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`boolean`类型
+```js
+var value = false;
+return value.isBoolean(); // true
+```
+## isShort <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`short`类型
+```js
+var value = 123s;
+return value.isShort(); // true
+```
+
+## isDecimal <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`decimal`类型
+```js
+var value = 123m;
+return value.isDecimal(); // true
+```
+
+## isDate <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是`Date`类型
+```js
+import 'java.util.Date' as Date;
+var value = new Date();
+return value.isDate(); // true
+```
+
+## isArray <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是数组
+```js
+var value = '123'.split('');
+return value.isArray(); // true
+```
+
+## isList <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是List
+```js
+var value = [1,2,3];
+return value.isList(); // true
+```
+
+## isMap <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是Map
+```js
+var value = {
+    key : 'value'
+};
+return value.isMap(); // true
+```
+
+## isCollection <Badge text="0.3.3+" type="error"/>
+- 返回值：`boolean`
+- 函数说明：判断是否是集合
+```js
+var value = [1,2,3];
+return value.isCollection(); // true
+```

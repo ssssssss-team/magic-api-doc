@@ -5,7 +5,7 @@
 public class CustomSqlCache implements SqlCache {
 
     @Override
-    public void put(String name, String key, Object value) {
+    public void put(String name, String key, Object value, long ttl) {
         //将SQL结果存入到缓存
     }
 

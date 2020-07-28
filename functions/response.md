@@ -1,10 +1,10 @@
-# Response
+# Response <Badge text="0.3.0+" type="error"/>
 
 ## 引用模块
 ```javascript
 import response;
 ```
-## page
+## page <Badge text="0.3.0+" type="error"/>
 - 入参：`total`:`long`
 - 入参：`values`:`list`
 - 返回值：`Object`
@@ -15,7 +15,7 @@ import response;
 return response.page(10,[1,2,3,4,5]);
 ```
 
-## json
+## json <Badge text="0.3.0+" type="error"/>
 - 入参：`value`:`Object`
 - 返回值：`ResponseEntity`
 - 函数说明：构建Json结果
@@ -28,7 +28,7 @@ return response.json({
 });
 ```
 
-## download
+## download <Badge text="0.3.0+" type="error"/>
 - 入参：`value`:`Object`
 - 入参：`filename`:`文件名`
 - 返回值：`ResponseEntity`
@@ -38,7 +38,7 @@ import response;
 return response.download('文件内容','test.txt');
 ```
 
-## image
+## image <Badge text="0.3.0+" type="error"/>
 - 入参：`value`:`Object`
 - 入参：`mine`:`String`
 - 返回值：`ResponseEntity`

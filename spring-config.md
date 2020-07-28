@@ -35,7 +35,7 @@
 - 默认值：`null`(默认数据源)
 `magic-api.datasource` 接口存储选择的数据源（默认使用默认数据源）
 
-## auto-import-module
+## auto-import-module <Badge text="0.3.2+" type="error"/>
 - 类型：`String`
 - 默认值：`db`(默认导入db模块，多个值时用","分隔)
 `magic-api.auto-import-module` 默认导入的模块
@@ -101,7 +101,7 @@ DEBUG配置
 
 `magic-api.debug-config.timeout`DEBUG断点等待时间，单位秒，默认为60秒
 
-## swagger-config
+## swagger-config <Badge text="0.3.0+" type="error"/>
 
 Swagger 配置
 

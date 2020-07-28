@@ -1,4 +1,4 @@
-# 集成Swagger
+# 集成Swagger <Badge text="0.3.0+" type="error"/>
 
 ## Maven引入
 ```xml
