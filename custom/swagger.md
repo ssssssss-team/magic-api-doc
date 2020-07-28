@@ -16,7 +16,8 @@
 
 ## SpringBoot配置
 
-当maven引入后文档就生效了，以下配置均可省略
+需在启动类加 **`@EnableSwagger2`**
+以下配置是可选的配置项（可省略）
 
 ```yaml
 magic-api:
