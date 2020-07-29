@@ -64,7 +64,7 @@ module.exports = {
 		},{
 			title : '高级应用',
 			collapsable: false,
-			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension','custom/store','custom/module','custom/swagger']
+			children: ['custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension','custom/store','custom/module','custom/magic','custom/swagger']
 		},{
 			title : 'FAQ',
 			collapsable: false,

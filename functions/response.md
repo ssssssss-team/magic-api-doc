@@ -48,3 +48,62 @@ import response;
 // 输出图片
 return response.image(bytes,'image/png');
 ```
+
+## addHeader <Badge text="0.3.3+" type="error"/>
+- 入参：`key`:`string`
+- 入参：`value`:`String`
+- 返回值：无返回值
+- 函数说明：添加Response Header
+```javascript
+import response;
+response.addHeader('AccessToken','123');
+```
+
+## setHeader <Badge text="0.3.3+" type="error"/>
+- 入参：`key`:`string`
+- 入参：`value`:`String`
+- 返回值：无返回值
+- 函数说明：设置Response Header
+```javascript
+import response;
+response.setHeader('AccessToken','123');
+```
+
+## addCookie <Badge text="0.3.3+" type="error"/>
+- 入参：`key`:`string`
+- 入参：`value`:`String`
+- 入参：`options`:`Map` cookie参数，可选
+- 返回值：无返回值
+- 函数说明：添加Cookie
+```javascript
+import response;
+response.addCookie('cookieKey','cookieValue');
+response.addCookie('cookieKey','cookieValue',{
+    path : '/',
+    httpOnly : true,
+    domain : 'ssssssss.org',
+    maxAge : 3600
+});
+```
+
+## addCookies <Badge text="0.3.3+" type="error"/>
+- 入参：`cookies`:`Map` cookie Map，必填
+- 入参：`options`:`Map` cookie参数，可选
+- 返回值：无返回值
+- 函数说明：批量添加Cookie
+```javascript
+import response;
+response.addCookies({
+    cookieKey1 : 'cookieValue1',
+    cookieKey2 : 'cookieValue2',
+});
+response.addCookies({
+    cookieKey1 : 'cookieValue1',
+    cookieKey2 : 'cookieValue2',
+},{
+    path : '/',
+    httpOnly : true,
+    domain : 'ssssssss.org',
+    maxAge : 3600
+});
+```
