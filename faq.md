@@ -5,12 +5,16 @@
 - [如何获取Cookie中的参数](#如何获取cookie中的参数)
 - [如何获取Session中的参数](#如何获取session中的参数)
 - [如何获取PathVariable中的参数](#如何获取pathvariable中的参数)
+- [如何获取上传的文件](#如何获取上传的文件)
+- [如何获取提交的数组参数](#如何获取提交的数组参数)
 - [如何打印SQL语句](#如何打印sql语句)
 - [如何给接口添加权限](#如何给接口添加权限)
 - [如何给UI添加权限](#如何给UI添加权限)
+- [对于UI界面如何使用Token鉴权](#对于UI界面如何使用Token鉴权)
 - [${}和#{}的区别](#和-的区别)
 - [如何循环拼接参数](#如何循环拼接参数)
 - [多数据源如何配置](#多数据源如何配置)
+- [运行时如何动态增删改数据源](#运行时如何动态增删改数据源)
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
 - [如何自定义返回结果](#如何自定义返回结果)
 
@@ -33,6 +37,22 @@
 ## 如何获取PathVariable中的参数
 脚本中使用`PathVariableName`或`path.xxxx`获取`PathVariable`中的参数
 `SQL`中使用`#{PathVariableName}`或`#{path.xxx}`获取`PathVariable`中的参数
+
+## 如何获取上传的文件
+
+利用Request模块
+```js
+import request;
+request.getFile('name');
+```
+
+## 如何获取提交的数组参数
+
+利用Request模块
+```js
+import request;
+return request.getValues('name');
+```
 
 ## 如何打印SQL语句
 和`JdbcTemplate`的打印SQL语句方式一样
@@ -90,7 +110,9 @@ public class UIPermissionInterceptor implements RequestInterceptor {
     }
 }
 ```
+## 对于UI界面如何使用Token鉴权
 
+目前不可以，请改用Cookie的方式鉴权。
 
 ## ${}和#{}的区别
 主要区别在于`${}`用于拼接SQL(会产生SQL注入问题)，`#{}`会替换成占位符（不会产生SQL注入问题），这里的区别于`Mybatis`一致
@@ -133,6 +155,11 @@ public DynamicDataSource dynamicDataSource(){
 db.select('select * from sys_user');  //使用默认数据源
 db.slave.select('select * from sys_user');  //使用slave数据源
 ```
+
+## 运行时如何动态增删改数据源
+
+需要将`DynamicDataSource`对象注入进来，通过操作该对象的`put`、`delete`等方法进行操作
+
 ## SQL执行报错java.sql.SQLFeatureNotSupportedException: null
 原因：druid版本过低，升级至最新版后即可
 
@@ -141,3 +168,5 @@ db.slave.select('select * from sys_user');  //使用slave数据源
 - 通过`自定义JSON结果`，具体定义方法查看[自定义JSON结果](./custom/json)
 - 通过`自定义拦截器`拦截返回自己想要的格式，具体定义方法查看[自定义拦截器](./custom/interceptor)
 - 通过`spring`的拦截器返回想要的格式，如`ResponseBodyAdvice`，`HandlerMethodReturnValueHandler`（这种方式目前会影响到UI,故不推荐使用）
+
+

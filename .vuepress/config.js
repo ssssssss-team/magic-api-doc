@@ -56,7 +56,7 @@ module.exports = {
 		},{
 			title : '函数库',
 			collapsable: false,
-			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb','functions/response']
+			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb','functions/request','functions/response']
 		},{
 			title : '函数扩展',
 			collapsable: false,
