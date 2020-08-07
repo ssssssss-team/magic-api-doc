@@ -14,9 +14,9 @@ public class TestFunctions implements MagicModule {
 	}
     
     /**
-    *   方法必须是public static 修饰
+    *   调用打印方法
     */
-	public static void println(String value) {
+	public void println(String value) {
 		System.out.println(value);
 	}
 }
