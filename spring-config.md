@@ -40,6 +40,12 @@
 - 默认值：`db`(默认导入db模块，多个值时用","分隔)
 `magic-api.auto-import-module` 默认导入的模块
 
+## refresh-interval <Badge text="0.3.4+" type="error"/>
+- 类型：`int`
+- 默认值：`0` （<=0为不启用）
+
+`magic-api.refresh-interval` 自动刷新间隔(单位为秒)，开启后定期从数据库读取接口信息并刷新映射。
+
 ## page-config
 
 分页配置
