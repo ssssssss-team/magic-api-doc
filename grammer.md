@@ -176,7 +176,7 @@ key2:456
 
 #### 导入Java类
 ```javascript
-import 'java.lang.System' as system;//导入静态类并赋值给system作为变量
+import 'java.lang.System' as System;//导入静态类并赋值给system作为变量
 import 'javax.sql.DataSource' as ds;//从spring中获取DataSource并将值赋值给ds作为变量
 import 'org.apache.commons.lang3.StringUtils' as string;//导入静态类并赋值给ds作为变量
 
