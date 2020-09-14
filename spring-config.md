@@ -174,4 +174,4 @@ Swagger 配置
 - 类型: `string`
 - 默认值： `null`
 
-`magic-api.security-config.username` 配置登录用的密码，当用户名和密码都配置时，页面需登录才能访问
+`magic-api.security-config.password` 配置登录用的密码，当用户名和密码都配置时，页面需登录才能访问
