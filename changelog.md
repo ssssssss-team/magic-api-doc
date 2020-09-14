@@ -1,5 +1,13 @@
 # 更新日志
 
+## [v0.4.0] 2020.09.14
+- 新增用户名、密码配置（用于页面登录，增加安全性）[#I1UTXT](https://gitee.com/ssssssss-team/magic-api/issues/I1UTXT)
+- 新增`response.end`方法 [#1S5UJ](https://gitee.com/ssssssss-team/magic-api/issues/I1S5UJ)
+- 新增自动导包配置(默认导入`java.util.*、java.lang.*`)
+- 新增允许覆盖应用接口配置
+- 优化数据库兼容性 [#I1TCFU](https://gitee.com/ssssssss-team/magic-api/issues/I1TCFU)
+- 优化代码提示
+
 ## [v0.3.4] 2020.08.09
 - 新增支持将请求参数存入一个变量中
 - 新增支持接口自动刷新

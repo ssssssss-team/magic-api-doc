@@ -46,6 +46,19 @@
 
 `magic-api.refresh-interval` 自动刷新间隔(单位为秒)，开启后定期从数据库读取接口信息并刷新映射。
 
+## auto-import-package <Badge text="0.4.0+" type="error"/>
+
+- 类型：`String`
+- 默认值：`java.lang.*,java.util.*`(多个值时用","分隔，目前只支持以.*结尾的通配符)
+`magic-api.auto-import-package` 默认导入的包
+
+## auto-import-package <Badge text="0.4.0+" type="error"/>
+
+- 类型：`boolean`
+- 默认值：`false`
+`magic-api.allow-override` 是否允许覆盖应用接口
+
+
 ## page-config
 
 分页配置
@@ -144,3 +157,21 @@ Swagger 配置
 - 默认值:`1.0`
 
 `magic-api.swagger-config.version` 文档版本
+
+## security-config  <Badge text="0.4.0+" type="error"/>
+
+安全配置
+
+### username
+
+- 类型: `string`
+- 默认值： `null`
+
+`magic-api.security-config.username` 配置登录用的用户名，当用户名和密码都配置时，页面需登录才能访问
+
+### password
+
+- 类型: `string`
+- 默认值： `null`
+
+`magic-api.security-config.username` 配置登录用的密码，当用户名和密码都配置时，页面需登录才能访问

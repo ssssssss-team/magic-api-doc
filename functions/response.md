@@ -107,3 +107,8 @@ response.addCookies({
     maxAge : 3600
 });
 ```
+
+## end <Badge text="0.4.0+" type="error"/>
+
+- 返回值：无返回值
+- 函数说明：取消返回默认的json结构，通过其他方式的输出结果（如：调用outputstream输出）
