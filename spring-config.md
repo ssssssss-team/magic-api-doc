@@ -10,7 +10,7 @@
 - 类型：`String`
 - 默认值：`null`
 
-`magic-api.web` WEB页面的请求路径，可空，填写时开启，否则不开启，生成环境建议不开启
+`magic-api.web` WEB页面的请求路径，可空，填写时开启，否则不开启，生产环境建议不开启
 
 ## banner
 - 类型：`boolean`
