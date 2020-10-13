@@ -33,11 +33,13 @@
 ## datasource
 - 类型：`String`
 - 默认值：`null`(默认数据源)
+
 `magic-api.datasource` 接口存储选择的数据源（默认使用默认数据源）
 
 ## auto-import-module <Badge text="0.3.2+" type="error"/>
 - 类型：`String`
 - 默认值：`db`(默认导入db模块，多个值时用","分隔)
+
 `magic-api.auto-import-module` 默认导入的模块
 
 ## refresh-interval <Badge text="0.3.4+" type="error"/>
@@ -50,12 +52,14 @@
 
 - 类型：`String`
 - 默认值：`java.lang.*,java.util.*`(多个值时用","分隔，目前只支持以.*结尾的通配符)
+
 `magic-api.auto-import-package` 默认导入的包
 
 ## allow-override <Badge text="0.4.0+" type="error"/>
 
 - 类型：`boolean`
 - 默认值：`false`
+
 `magic-api.allow-override` 是否允许覆盖应用接口
 
 
