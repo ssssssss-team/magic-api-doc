@@ -52,7 +52,7 @@
 - 默认值：`java.lang.*,java.util.*`(多个值时用","分隔，目前只支持以.*结尾的通配符)
 `magic-api.auto-import-package` 默认导入的包
 
-## auto-import-package <Badge text="0.4.0+" type="error"/>
+## allow-override <Badge text="0.4.0+" type="error"/>
 
 - 类型：`boolean`
 - 默认值：`false`
