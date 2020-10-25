@@ -142,11 +142,11 @@ return db.select(sql);
 编写java代码如下：
 ```java
 @Bean
-public DynamicDataSource dynamicDataSource(){
-    DynamicDataSource dynamicDataSource = new DynamicDataSource();
-    // 设置默认数据源（默认数据源一定要设置，且名称必须是null）
-    dynamicDataSource.put(null,ds1);
-    dynamicDataSource.put("slave",ds2);
+public MagicDynamicDataSource magicDynamicDataSource(){
+    MagicDynamicDataSource dynamicDataSource = new MagicDynamicDataSource();
+    // 设置默认数据源（默认数据源一定要设置）
+    dynamicDataSource.setDefault(ds1);
+    dynamicDataSource.add("slave",ds2);
     return dynamicDataSource;
 }
 ```
@@ -158,7 +158,7 @@ db.slave.select('select * from sys_user');  //使用slave数据源
 
 ## 运行时如何动态增删改数据源
 
-需要将`DynamicDataSource`对象注入进来，通过操作该对象的`put`、`delete`等方法进行操作
+需要将`MagicDynamicDataSource`对象注入进来，通过操作该对象的`add`、`delete`等方法进行操作
 
 ## SQL执行报错java.sql.SQLFeatureNotSupportedException: null
 原因：druid版本过低，升级至最新版后即可

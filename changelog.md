@@ -1,5 +1,16 @@
 # 更新日志
 
+## [v0.4.1] 2020.10.26
+
+- 新增支持ClickHouse数据库
+- 修复定义空字符串`""`时代码高亮不正确的BUG
+- 修复冲突问题，将`DynamicDataSource`更名为`MagicDynamicDataSource`
+- 修复未正确调用带有可变参数的重载方法的BUG
+- 修复向页面传递配置信息时传递用户名密码的安全问题
+- 优化模拟测试，在测试时将header参数放在http header中 [#I1Z6RE](https://gitee.com/ssssssss-team/magic-api/issues/I1Z6RE)
+- 优化登录，禁止使用ESC键或回车键关闭登录框
+
+
 ## [v0.4.0] 2020.09.14
 - 新增用户名、密码配置（用于页面登录，增加安全性）[#I1UTXT](https://gitee.com/ssssssss-team/magic-api/issues/I1UTXT)
 - 新增`response.end`方法 [#1S5UJ](https://gitee.com/ssssssss-team/magic-api/issues/I1S5UJ)
