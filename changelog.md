@@ -1,5 +1,15 @@
 # 更新日志
 
+## [v0.4.2] 2020.11.02
+- 新增脚本异步调用功能
+- 新增集合函数`sort`、`reserve`、`join`、`shuffle`
+- 新增代码折叠功能
+- 优化模拟测试，改为实际请求
+- 优化对`BigDecimal`类型的代码提示
+- 优化对枚举类型的代码提示
+- 优化对`Spring Security`框架的支持,自动适配解决`ThreadLocal`问题
+- 去除`Cookie`、`Session`模拟
+
 ## [v0.4.1] 2020.10.26
 
 - 新增支持ClickHouse数据库
