@@ -52,7 +52,7 @@ module.exports = {
 		},{
 			title : '案例集',
 			collapsable: false,
-			children: ['cases/sql','cases/transcation','cases/convert','cases/validate','cases/cache']
+			children: ['cases/sql','cases/transcation','cases/convert','cases/validate','cases/cache','cases/async']
 		},{
 			title : '函数库',
 			collapsable: false,
