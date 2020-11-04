@@ -6,8 +6,9 @@
 |var|定义变量|
 |if|条件语句的引导词|
 |else|用在条件语句中，表明当条件不成立时的分支|
-|for|循环语句|
+|for|for循环语句|
 |in|与for配合使用|
+|while|while循环语句|
 |continue|执行下一次循环|
 |break|跳出循环|
 |return|终止当前过程的执行并正常退出到上一个执行过程中|
@@ -154,6 +155,16 @@ return sum;
 /*
 结果：5050
 */
+```
+## while循环 <Badge text="0.4.4+" type="error"/>
+```javascript
+var count = 100;
+var sum = 0;
+while(count){
+    sum = sum + count;
+    count = count - 1;
+}
+return sum; // 5050
 ```
 
 #### 循环map
