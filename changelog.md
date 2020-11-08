@@ -1,5 +1,18 @@
 # 更新日志
 
+## [v0.4.5] 2020.11.09
+- 新增集合函数`group`、`join`
+- 新增聚合函数`max`、`min`、`avg`、`sum`
+- 新增参数提示、动态数据源提示
+- 新增`magic-api.thread-pool-executor-size`参数配置，用来设置`async`语句线程池大小
+- 修复恢复断点时丢失`header`的问题
+- 修复进入断点时，获取变量信息不正确的BUG
+- 优化`magic-api.auto-import-package` 配置，内置自动导入`java.lang.*`、`java.util.*`
+- 优化`async`语句执行机制，改为在线程池中执行
+- 优化代码提示，增加中文提示
+- 优化`查看历史记录详情` 的SQL兼容性
+
+
 ## [v0.4.4] 2020.11.04
 - 新增`while`循环语句
 - 修复异常结果未被正常处理的BUG

@@ -4,6 +4,7 @@
 
 编写java代码如下：
 ```java
+import org.ssssssss.script.annotation.Comment;
 /**
  * String类型转换
  */
@@ -18,7 +19,8 @@ public class StringFunctionExtension implements ExtensionMethod{
 	*	以将字符串转为int为例,该方法编写如下,最终调用时使用strVar.toInt()调用
 	*	该方法第一个参数会自动被传入,所以调用时无需传入
 	*/
-	public static Integer toInt(String str){
+    @Comment("将字符串转为Integer(方法名的提示)")
+	public static Integer toInt(String str){    // 第一个参数无需使用@Comment注解
 		return NumberUtils.toInt(str);
 	}
 

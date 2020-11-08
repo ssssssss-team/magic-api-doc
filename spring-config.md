@@ -20,7 +20,7 @@
 
 ## map-underscore-to-camel-case
 - 类型：`boolean`
-- 默认值：`false`
+- 默认值：`true`
 
 `magic-api.map-underscore-to-camel-case` 是否开启下划线转驼峰命名
 
@@ -51,7 +51,8 @@
 ## auto-import-package <Badge text="0.4.0+" type="error"/>
 
 - 类型：`String`
-- 默认值：`java.lang.*,java.util.*`(多个值时用","分隔，目前只支持以.*结尾的通配符)
+- 默认值(v0.4.0+)：`java.lang.*,java.util.*`(多个值时用","分隔，目前只支持以.*结尾的通配符)
+- 默认值(v0.4.5+)：`null`，`java.lang.*,java.util.*`转为内置自动导入
 
 `magic-api.auto-import-package` 默认导入的包
 
@@ -62,6 +63,12 @@
 
 `magic-api.allow-override` 是否允许覆盖应用接口
 
+## thread-pool-executor-size <Badge text="0.4.5+" type="error"/>
+
+- 类型：`int`
+- 默认值 : `0`  `<=0` 表示`CPU 核心数 * 2`
+
+`magic-api.thread-pool-executor-size` 异步调用的线程池大小
 
 ## page-config
 

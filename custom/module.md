@@ -2,6 +2,7 @@
 
 编写java代码如下：
 ```java
+import org.ssssssss.script.annotation.Comment;
 @Component  //注入到Spring容器中
 public class TestFunctions implements MagicModule {
 
@@ -16,7 +17,8 @@ public class TestFunctions implements MagicModule {
     /**
     *   调用打印方法
     */
-	public void println(String value) {
+    @Comment("方法名的注释(用于提示)")
+	public void println(@Comment("参数名的提示(用于提示)")String value) {
 		System.out.println(value);
 	}
 }

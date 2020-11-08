@@ -72,3 +72,67 @@ return list.filter((item)=>item.sex == 0).map((item)=>{
 }]
 */
 ```
+
+## List分组
+```javascript
+// List<Map<String,Object>>
+var result = [
+    { xxx : 1, yyy : 2, value : 11},
+    { xxx : 1, yyy : 2, value : 22},
+    { xxx : 2, yyy : 2, value : 33}
+];
+
+
+return result.group(item=>item.xxx + '_' + item.yyy)
+/*
+Map<Object,List<Object>>
+{
+    "1_2": [
+            {"yyy": 2, "xxx": 1, "value": 11},
+            {"yyy": 2, "xxx": 1, "value": 22}
+    ],
+    "2_2": [{"yyy": 2, "xxx": 2, "value": 33 }]
+}
+*/
+
+return result.group(item=>item.xxx + '_' + item.yyy,list=>{
+    count : list.size(),
+    sum : list.map(v=>v.value).sum(),
+    avg : list.map(v=>v.value).avg()
+})
+/*
+Map<Object,Object>
+{
+    "1_2": { "avg": 16.5, "count": 2, "sum": 33 },
+    "2_2": { "avg": 33,   "count": 1, "sum": 33 }
+}
+*/
+```
+## List关联
+```javascript
+var year2019 = [
+    { "pt":2019, "item_code":"code_1", "sum_price":2234 },
+    { "pt":2019, "item_code":"code_2", "sum_price":234 },
+    { "pt":2019, "item_code":"code_3", "sum_price":12340 },
+    { "pt":2019, "item_code":"code_4", "sum_price":2344 }
+];
+var year2018 = [
+    { "pt":2018, "item_code":"code_1", "sum_price":1234.0 },
+    { "pt":2018, "item_code":"code_4", "sum_price":1234.0 }
+];
+return year2019.join(year2018, (left,right)=>left.item_code == right.item_code,  (left,right)=>{
+   '年份' : left.pt,
+   '编号' : left.item_code,
+   '今年' : left.sum_price,
+   '去年' : right == null ? 'unknow' : right.sum_price,
+   '环比去年增长' : right == null ? '-': (((left.sum_price - right.sum_price) / right.sum_price * 100) + "%")
+});
+/*
+[
+    {"年份": 2019, "今年": 2234, "去年": 1234, "环比去年增长": "81.03728%", "编号": "code_1"},
+    {"年份": 2019, "今年": 234, "去年": "unknow", "环比去年增长": "-", "编号": "code_2"},
+    {"年份": 2019, "今年": 12340,"去年": "unknow","环比去年增长": "-","编号": "code_3"},
+    {"年份": 2019, "今年": 2344, "去年": 1234, "环比去年增长": "89.95138%", "编号": "code_4"}
+]
+*/
+```
