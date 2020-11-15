@@ -1,12 +1,26 @@
 # 更新日志
 
+## [v0.4.6] 2020.11.16
+- 新增函数`asBean` 用于将`map`或`list`转为Java对象 #[I251SS](https://gitee.com/ssssssss-team/magic-api/issues/I251SS)
+- 新增语法`++`、`--`、`+=`、`-=`、`*=`、`/=`、`%=`、`连=`
+- 修复`async`嵌套会产生阻塞的问题
+- 修复`return`语句在不返回任何值的空指针BUG
+- 修复在`async`中变量读取不正确的问题
+- 修复在切换变量作用域时二次赋值不正确的BUG [#I252VY](https://gitee.com/ssssssss-team/magic-api/issues/I252VY)
+- 修复在`magic-api.auto-import-package`为空时 `JS`报错的问题
+- 优化生成`SQL`时产生的空白
+- 优化`&&`、`||` 运算，支持`data && data.xx`、`var a = b || 1` 的写法
+- 优化`magic-script`脚本变量读写性能
+- 优化代码提示、参数提示
+- 优化脚本异常提示
+
 ## [v0.4.5] 2020.11.09
 - 新增集合函数`group`、`join`
 - 新增聚合函数`max`、`min`、`avg`、`sum`
 - 新增参数提示、动态数据源提示
 - 新增`magic-api.thread-pool-executor-size`参数配置，用来设置`async`语句线程池大小
 - 修复恢复断点时丢失`header`的问题
-- 修复进入断点时，获取变量信息不正确的BUG
+- 修复进入断点时，获取变量信息不正确的BUG 
 - 优化`magic-api.auto-import-package` 配置，内置自动导入`java.lang.*`、`java.util.*`
 - 优化`async`语句执行机制，改为在线程池中执行
 - 优化代码提示，增加中文提示
