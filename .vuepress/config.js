@@ -69,5 +69,11 @@ module.exports = {
 			children: ['faq']
 		}]
     },
-	plugins : [require('./plugins/stat')]
+	plugins : [
+		[require('./plugins/stat')],
+		["lastest-version",{
+			type: "maven",
+			repo: "org.ssssssss/magic-api",
+		}]
+	]
 }

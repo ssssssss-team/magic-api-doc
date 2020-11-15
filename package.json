@@ -1,22 +1,12 @@
 {
-  "name": "ssssssss",
+  "name": "magic-api-doc",
   "version": "0.0.1",
-  "description": "新一代接口框架，以XML方式定义接口，不写代码即可完成接口。\r >  **QQ交流群：720832964**",
-  "main": "index.js",
-  "dependencies": {
-    "vuepress": "^1.4.1",
-    "webpack-dev-middleware": "^3.6.0"
+  "devDependencies": {
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-lastest-version": "^0.2.0"
   },
-  "devDependencies": {},
   "scripts": {
     "dev": "vuepress dev",
     "build": "vuepress build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitee.com/jmxd/ssssssss.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
