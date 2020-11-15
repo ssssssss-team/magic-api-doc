@@ -29,4 +29,4 @@ stages:                                   # 构建阶段配置
               git config --global user.email "${U_EMAIL}"
               git add -A
               git commit -m "depoly at `date +"%Y-%m-%d %H:%M"`"
-              git push --quiet --force "https://${USERNAME}:${PASSWORD}@github.com/ssssssss-team/magic-api-doc.git" master:gh-pages
+              git push --quiet --force "https://${USERNAME}:${PASSWORD}@gitee.com/ssssssss-team/magic-api-doc.git" master:gh-pages
