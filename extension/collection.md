@@ -174,3 +174,26 @@ return year2019.join(year2018, (left,right)=>left.item_code == right.item_code, 
 ]
 */
 ```
+
+## asBean(转为Java对象) <Badge text="0.4.6+" type="error"/>
+- 入参：`target` : `Class<?>` 目标类型 
+- 返回值：`List<?>`
+- 函数说明： 将`List<Object>` 转为目标`List`
+
+```js
+import 'org.ssssssss.script.functions.User' as User;
+var userList = [{
+    age : 18,
+    weight : 121,
+    money : 123456789L,
+    name : '法外狂徒',
+    roles : [{
+        name : 'admin',
+        permissions : ['1','2','3']
+    },{
+      name : 'normal',
+      permissions : ['4','5','6']
+    }]
+}]
+return userList.asBean(User.class);
+```

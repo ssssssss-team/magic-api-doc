@@ -1,4 +1,4 @@
-# 常见问题
+## 常见问题
 
 - [如何获取RequestBody中的参数](#如何获取requestbody中的参数)
 - [如何获取Header中的参数](#如何获取header中的参数)
@@ -17,6 +17,7 @@
 - [运行时如何动态增删改数据源](#运行时如何动态增删改数据源)
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
 - [如何自定义返回结果](#如何自定义返回结果)
+- [页面加载缓慢](#页面加载缓慢)
 
 ## 如何获取RequestBody中的参数
 脚本中使用`body.xxx`获取`RequestBody`中的参数
@@ -170,3 +171,10 @@ db.slave.select('select * from sys_user');  //使用slave数据源
 - 通过`spring`的拦截器返回想要的格式，如`ResponseBodyAdvice`，`HandlerMethodReturnValueHandler`（这种方式目前会影响到UI,故不推荐使用）
 
 
+## 页面加载缓慢
+
+由于`monaco-editor`编辑器比较大，建议开启压缩静态资源
+```properties
+server.compression.enabled=true #启用压缩
+server.compression.min-response-size=256 #大于256kb时压缩
+```

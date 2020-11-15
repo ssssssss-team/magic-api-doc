@@ -21,5 +21,3 @@ import assert;  //导入断言模块
 assert.regx(message,'\d+',1004,'message必须为数字');
 return message;
 ```
-
-## 其它验证

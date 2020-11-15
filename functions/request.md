@@ -1,4 +1,4 @@
-# Request <Badge text="0.3.3+" type="error"/>
+# request <Badge text="0.3.3+" type="error"/>
 
 ## 引用模块
 ```javascript

@@ -1,4 +1,4 @@
-# Response <Badge text="0.3.0+" type="error"/>
+# response <Badge text="0.3.0+" type="error"/>
 
 ## 引用模块
 ```javascript

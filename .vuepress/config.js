@@ -8,8 +8,6 @@ module.exports = {
 	themeConfig: {
 		docsRepo : 'ssssssss-team/magic-api',
 		docsDir : '/',
-		editLinks : true,
-		editLinkText: "在 GitHub 上编辑此页",
 		lastUpdated: "上次更新",
 		nav : [{
 			text : '源码',
@@ -56,11 +54,11 @@ module.exports = {
 		},{
 			title : '函数库',
 			collapsable: false,
-			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb','functions/request','functions/response']
+			children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb','functions/request','functions/response','functions/env']
 		},{
 			title : '函数扩展',
 			collapsable: false,
-			children: ['extension/','extension/object','extension/collection','extension/class']
+			children: ['extension/','extension/object','extension/collection','extension/map','extension/class']
 		},{
 			title : '高级应用',
 			collapsable: false,

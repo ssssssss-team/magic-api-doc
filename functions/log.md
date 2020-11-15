@@ -1,4 +1,4 @@
-# 日志
+# log
 
 ## 引用模块
 ```javascript

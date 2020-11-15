@@ -3,6 +3,8 @@
 ## [v0.4.6] 2020.11.16
 - 新增函数`asBean` 用于将`map`或`list`转为Java对象 #[I251SS](https://gitee.com/ssssssss-team/magic-api/issues/I251SS)
 - 新增语法`++`、`--`、`+=`、`-=`、`*=`、`/=`、`%=`、`连=`
+- 新增`env`模块，用于读取配置
+- 新增`.class`属性访问
 - 修复`async`嵌套会产生阻塞的问题
 - 修复`return`语句在不返回任何值的空指针BUG
 - 修复在`async`中变量读取不正确的问题
