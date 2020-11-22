@@ -58,7 +58,7 @@ module.exports = {
 		},{
 			title : '函数扩展',
 			collapsable: false,
-			children: ['extension/','extension/object','extension/collection','extension/map','extension/class']
+			children: ['extension/','extension/object','extension/number','extension/date','extension/collection','extension/map','extension/class']
 		},{
 			title : '高级应用',
 			collapsable: false,

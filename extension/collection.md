@@ -197,3 +197,62 @@ var userList = [{
 }]
 return userList.asBean(User.class);
 ```
+
+## every <Badge text="0.4.7+" type="error"/>
+- 入参：`condition` : `Function` 判断条件 如:`value => value > 2`
+- 返回值：`boolean`
+- 函数说明：判断集合是否都符合条件
+
+```js
+var vals = [1,2,3,4,5,6,7];
+return vals.every(e=>e > 0); // true
+```
+
+
+## some <Badge text="0.4.7+" type="error"/>
+- 入参：`condition` : `Function` 判断条件 如:`value => value > 2`
+- 返回值：`boolean`
+- 函数说明：判断集合是否有符合条件的
+
+```js
+var vals = [1,2,3,4,5,6,7];
+return vals.every(e=>e == 0); // false
+```
+
+## reduce <Badge text="0.4.7+" type="error"/>
+- 入参：`function` : `Function` 计算函数 如:`(sum,val)=>sum + val`
+- 返回值：`Object`
+- 函数说明：循环集合通过给定的计算函数返回一个新值
+
+```js
+var vals = [1,2,3];
+return vals.reduce((sum,val)=>sum + val); // 6
+```
+
+## skip <Badge text="0.4.7+" type="error"/>
+- 入参：`value` : `int` 跳过的数量，如:`2`
+- 返回值：`Object`
+- 函数说明：跳过指定个数截取集合
+
+```js
+var vals = [1,2,3,4];
+return vals.skip(2); // [3,4]
+```
+
+## limit <Badge text="0.4.7+" type="error"/>
+- 入参：`value` : `int` 限制的数量，如:`2`
+- 返回值：`Object`
+- 函数说明：取指定个数的集合
+
+```js
+var vals = [1,2,3,4];
+return vals.limit(3); // [1,2,3]
+```
+## findNotNull <Badge text="0.4.7+" type="error"/>
+- 返回值：`Object`
+- 函数说明：找到第一个不为`null`的值
+
+```js
+var vals = [null,null,3,null];
+return vals.findNotNull(); // 3
+```

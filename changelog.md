@@ -1,7 +1,23 @@
 # 更新日志
 
+## [v0.4.7] 2020.11.23
+- 新增`Map`类型到`JavaBean`的自动隐式转换 [#I251SS](https://gitee.com/ssssssss-team/magic-api/issues/I251SS)
+- 新增`session.key = value`的写法，用于向`session`中写值
+- 新增集合函数`every`、`some`、`reduce`、`skip`、`limit`、`findNotNull`
+- 新增`Map`函数`sort`、`each`、`asString`、`merge`、`asList`
+- 新增`Number`函数 `round`、`toFixed`、`floor`、`ceil`、`atPercent`
+- 新增`Date`函数 `format`
+- 修复调用`lambda`时变量获取不正确的BUG [#I2632N](https://gitee.com/ssssssss-team/magic-api/issues/I2632N)
+- 优化`Map`类型定义、保持书写顺序
+- 优化编辑器，可以折叠`import`、以及支持在单行太长时自动换行。
+- 优化编辑器高亮，支持`SQL`高亮
+- 优化`Loading`界面
+- 优化部分逻辑，支持`JDK9+`
+- 优化内部代码，`DatabaseQuery` 重命名为 `SQLExecutor`
+
+
 ## [v0.4.6] 2020.11.16
-- 新增函数`asBean` 用于将`map`或`list`转为Java对象 #[I251SS](https://gitee.com/ssssssss-team/magic-api/issues/I251SS)
+- 新增函数`asBean` 用于将`map`或`list`转为Java对象 [#I251SS](https://gitee.com/ssssssss-team/magic-api/issues/I251SS)
 - 新增语法`++`、`--`、`+=`、`-=`、`*=`、`/=`、`%=`、`连=`
 - 新增`env`模块，用于读取配置
 - 新增`.class`属性访问
