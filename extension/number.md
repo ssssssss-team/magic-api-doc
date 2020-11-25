@@ -36,11 +36,11 @@ var value = 123.456d;
 return value.ceil();  // 124;
 ```
 
-## atPercent
+## asPercent
 - 入参：`number`:`int`  要保留的小数
 - 返回值：`String`
 - 函数说明：将数值转为百分比
 ```js
 var value = 0.1289999999;
-return value.atPercent(2);  // "12.90%"
+return value.asPercent(2);  // "12.90%"
 ```

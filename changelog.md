@@ -1,5 +1,12 @@
 # 更新日志
 
+## [v0.4.8] 2020.11.26
+- 修复`monaco-editor`引起的浏览器崩溃问题
+- 修复设置线程池大小无效的问题
+- 增强`!`一元运算符，支持非布尔值运算
+- 修复函数命名`atPercent`变更为`asPercent`
+
+
 ## [v0.4.7] 2020.11.23
 - 新增`Map`类型到`JavaBean`的自动隐式转换 [#I251SS](https://gitee.com/ssssssss-team/magic-api/issues/I251SS)
 - 新增`session.key = value`的写法，用于向`session`中写值
