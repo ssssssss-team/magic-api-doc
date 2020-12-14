@@ -12,6 +12,7 @@
 |continue|执行下一次循环|
 |break|跳出循环|
 |return|终止当前过程的执行并正常退出到上一个执行过程中|
+|exit|终止当前脚本，并退出返回，如`exit 200,'执行成功',[1,2,3];` v0.5.0中新增|
 |try|用于捕获可能发生异常的代码块|
 |catch|与try关键字配合使用，当发生异常时执行|
 |finally|与try关键字配合使用，finally块无论发生异常都会执行|
@@ -98,6 +99,7 @@
 |string|`'hello'`|
 |string|`"hello"`|
 |string|`"""多行文本块,主要用于编写SQL"""`|
+|Pattern|`/\d+/g`,`/pattern/gimuy` 用于定义正则，v0.5.0中新增|
 |lambda|`()=>expr`、`(param1,param2....)=>{...}`|
 |list|`[1,2,3,4,5]`|
 |map|`{key : value,key1 : value}`|
@@ -136,6 +138,65 @@
 - 非空字符串
 - `false`
 
+### 可选链操作符
+可选链操作符(`?.`)允许读取位于连接对象链深处的属性的值，而不必明确验证链中的每个引用是否有效。`?.`操作符的功能类似于`.`链式操作符，不同之处在于，在引用为空 的情况下不会引起错误，该表达式短路返回值是 `null`。
+
+当尝试访问可能不存在的对象属性时，可选链操作符将会使表达式更短、更简明。在探索一个对象的内容时，如果不能确定哪些属性必定存在，可选链操作符也是很有帮助的。
+```javascript
+obj?.prop
+obj?.(args)
+```
+
+示例：
+```javascript
+var a = null;
+var b = a?.name;    // b = null;
+var c = a?.getName();   // c = null;
+```
+
+### 扩展运算符
+
+扩展运算符，又叫展开语法(Spread syntax)， 是用于将list或map在语法层面展开；
+
+语法:
+> lambda 调用
+```javascript
+var sum = (a,b,c) => a + b + c;
+System.out.println(sum(...[1,2,3]))
+/*
+结果：6
+*/
+```
+> list 展开
+```javascript
+var arr = [3,4,5];
+System.out.println([1,2,...arr,6,7])
+/*
+结果：[1, 2, 3, 4, 5, 6, 7]
+*/
+```
+> list 展开到 map 中
+```javascript
+var arr = [3,4,5];
+System.out.println({key1:1,...arr})
+/*
+结果：{key1=1, 0=3, 1=4, 2=5}
+
+虽然这些key看起来像数值，但其实是String类型的key，如果把它们转为JSON看起来是这样的：
+
+{"key1":1, "0":3, "1":4, "2":5}
+
+*/
+```
+
+> map 展开
+```javascript
+var map = {key2:2}
+System.out.println({key1:1,...map,key3:3})
+/*
+结果：{key1=1, key2=2, key3=3}
+*/
+```
 
 
 ## for循环

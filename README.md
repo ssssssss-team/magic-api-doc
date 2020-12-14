@@ -2,7 +2,7 @@
 home: true
 heroImage: /images/magic-api-logo.png
 actionText: 快速开始 →
-actionLink: /intro/
+actionLink: /guide/intro/
 features:
 - title: 快速开发
   details: 无需定义Controller、Service、Dao、Mapper、XML、VO等Java对象，真正的快速开发！

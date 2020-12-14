@@ -1,5 +1,8 @@
 # 自定义JSON结果
 
+主要用于统一JSON结果处理
+
+编写java代码如下：
 ```java
 @Component
 public class CustomJsonValueProvider implements ResultProvider {

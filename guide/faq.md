@@ -83,7 +83,7 @@ logging:
 public class PermissionInterceptor implements RequestInterceptor {
 
     @Override
-    public Object preHandle(ApiInfo info, MagicScriptContext context) {
+    public Object preHandle(ApiInfo info, MagicScriptContext context, HttpServletRequest request, HttpServletResponse response) {
         // 获取配置的接口选项属性
         Object permissionCode = info.getOptionValue('permission');
         // 执行自己的代码逻辑进行判断是否有权限
@@ -113,7 +113,7 @@ public class UIPermissionInterceptor implements RequestInterceptor {
 ```
 ## 对于UI界面如何使用Token鉴权
 
-目前不可以，请改用Cookie的方式鉴权。
+目前使用Vue的方式，对请求进行拦截进行实现，请参考[在Vue中使用](./custom/vue)和[magic-editor配置](../config/magic-editor)
 
 ## ${}和#{}的区别
 主要区别在于`${}`用于拼接SQL(会产生SQL注入问题)，`#{}`会替换成占位符（不会产生SQL注入问题），这里的区别于`Mybatis`一致

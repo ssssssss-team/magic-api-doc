@@ -1,4 +1,44 @@
+---
+sidebarDepth: 3
+---
+
 # spring-boot配置
+
+## 完整配置示例
+```yml
+magic-api:
+  web: /magic/web # UI请求的界面以及UI服务地址
+  prefix: / # 接口前缀，可以不配置
+  auto-import-module: db  # 自动导入的模块
+  auto-import-package: java.lang.*,java.util.* #自动导包
+  refresh-interval: 0  #不启用刷新
+  datasource: test # 多数据源时配置，否则不用配置
+  allow-override: false #禁止覆盖应用接口
+  sql-column-case: camel #启用驼峰命名转换
+  banner: true # 打印banner
+  thread-pool-executor-size: 8 # async语句的线程池大小
+  throw-exception: false #执行出错时是否抛出异常
+  cache-config: # 缓存相关配置
+    capacity: 10000 #缓存容量
+    ttl: -1 # 永不过期，
+    enable: true # 启用缓存
+  page-config:
+    size: size # 页大小的参数名称
+    page: page # 页码的参数名称
+    default-page: 1 # 未传页码时的默认首页
+    default-size: 10 # 未传页大小时的默认页大小
+  security-config:  # 安全配置
+    username: admin # 登录用的用户名
+    password: 123456 # 登录用的密码
+  swagger-config:
+    version: 1.0
+    description: MagicAPI 接口信息
+    title: MagicAPI Swagger Docs
+    name: MagicAPI 接口
+    location: /v2/api-docs/magic-api/swagger2.json
+  debug-config:
+    timeout: 60 # 断点超时时间，默认60s
+```
 
 ## prefix
 - 类型：`String`
@@ -69,6 +109,21 @@
 - 默认值 : `0`  `<=0` 表示`CPU 核心数 * 2`
 
 `magic-api.thread-pool-executor-size` 异步调用的线程池大小
+
+## sql-column-case <Badge text="0.5.0+" type="error"/>
+
+- 类型：`string`
+- 默认值 : `default`、
+
+`magic-api.sql-column-case` 列名转换规则
+### 可选值
+- default (保持原样)
+- camel (驼峰命名)
+- pascal (帕斯卡命名)
+- upper (全大写)
+- lower (全小写)
+
+
 
 ## page-config
 

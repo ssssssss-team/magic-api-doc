@@ -42,6 +42,16 @@ var sql = "select * from sys_user limit 1";
 return db.selectOne(sql);   //返回Map
 ```
 
+## 列名转换
+```javascript
+var sql = "select * from sys_user limit 1";
+return db.upper().selectOne(sql);   //返回Map 并且列名转为大写。
+// 转为小写 采用 db.lower()
+// 保持原样 采用 db.default()
+// 驼峰命名 采用 db.camel()
+// 其它可以自定义实现列名转换。
+```
+
 ## 查询值
 ```javascript
 //#{id}表示从请求参数或PathVariable中获取参数
