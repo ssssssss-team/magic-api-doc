@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT ssssssss (sql|validate|update|insert|delete|select-list|select-one|function)*>
+<!ATTLIST ssssssss
+        request-mapping CDATA #IMPLIED>
+<!ELEMENT sql (#PCDATA)>
+<!ATTLIST sql
+        id CDATA #REQUIRED>
+<!ELEMENT validate (param)*>
+<!ATTLIST validate
+        id CDATA #REQUIRED
+        code CDATA #IMPLIED
+        message CDATA #IMPLIED>
+<!ELEMENT param (not-null|max-len|min-len|regx)*>
+<!ATTLIST param
+        code CDATA #IMPLIED
+        message CDATA #IMPLIED
+        name CDATA #REQUIRED
+        value CDATA #IMPLIED>
+<!ELEMENT not-null (#PCDATA)>
+<!ATTLIST not-null
+        value CDATA #IMPLIED
+        code CDATA #IMPLIED
+        message CDATA #IMPLIED>
+<!ELEMENT max-len (#PCDATA)>
+<!ATTLIST max-len
+        value CDATA #REQUIRED
+        code CDATA #IMPLIED
+        message CDATA #IMPLIED>
+<!ELEMENT min-len (#PCDATA)>
+<!ATTLIST min-len
+        value CDATA #REQUIRED>
+<!ELEMENT regx (#PCDATA)>
+<!ATTLIST regx
+        value CDATA #REQUIRED>
+<!ELEMENT update (#PCDATA|include|foreach)*>
+<!ATTLIST update
+        request-body (true) #IMPLIED
+        request-mapping CDATA #IMPLIED
+        request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
+        return-type (int|double|long|boolean) #IMPLIED
+        validate CDATA #IMPLIED
+        id CDATA #IMPLIED>
+<!ELEMENT include (#PCDATA)>
+<!ATTLIST include
+        refid CDATA #REQUIRED>
+<!ELEMENT foreach (#PCDATA|if)*>
+<!ATTLIST foreach
+        close CDATA #IMPLIED
+        collection CDATA #REQUIRED
+        item CDATA #IMPLIED
+        open CDATA #IMPLIED>
+<!ELEMENT if (#PCDATA|foreach)*>
+<!ATTLIST if
+        test CDATA #REQUIRED>
+<!ELEMENT insert (#PCDATA|include|foreach)*>
+<!ATTLIST insert
+        request-body (true) #IMPLIED
+        request-mapping CDATA #IMPLIED
+        request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
+        return-type (int|double|long|boolean) #IMPLIED
+        validate CDATA #IMPLIED
+        id CDATA #IMPLIED>
+<!ELEMENT delete (include|foreach)*>
+<!ATTLIST delete
+        request-body (true) #IMPLIED
+        request-mapping CDATA #IMPLIED
+        request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
+        return-type (int|double|long|boolean) #IMPLIED
+        validate CDATA #IMPLIED
+        id CDATA #IMPLIED>
+<!ELEMENT select-list (#PCDATA|include|foreach|if)*>
+<!ATTLIST select-list
+        request-mapping CDATA #IMPLIED
+        request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
+        page (true) #IMPLIED
+        request-body (true) #IMPLIED
+        return-type (string|map|int|long|double) #IMPLIED
+        id CDATA #IMPLIED
+        validate CDATA #IMPLIED>
+<!ELEMENT select-one (#PCDATA|include|foreach|if)*>
+<!ATTLIST select-one
+        request-mapping CDATA #IMPLIED
+        request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
+        return-type (string|map|int|long|double) #IMPLIED
+        request-body (true) #IMPLIED
+        id CDATA #IMPLIED
+        validate CDATA #IMPLIED>
+<!ELEMENT function (java|execute-sql)*>
+<!ATTLIST function
+        request-mapping CDATA #IMPLIED
+        request-method (get|post|head|put|delete|options|trace|patch) #IMPLIED
+        id CDATA #IMPLIED
+        request-body (true) #IMPLIED
+        validate CDATA #IMPLIED>
+<!ELEMENT java (value)*>
+<!ATTLIST java
+        class CDATA #REQUIRED
+        method CDATA #REQUIRED
+        return CDATA #IMPLIED>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT execute-sql (param)*>
+<!ATTLIST execute-sql
+        id CDATA #REQUIRED>
