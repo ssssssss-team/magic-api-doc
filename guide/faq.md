@@ -18,6 +18,7 @@
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
 - [如何自定义返回结果](#如何自定义返回结果)
 - [页面加载缓慢](#页面加载缓慢)
+- [脚本内容被转义](#脚本内容被转义)
 
 ## 如何获取RequestBody中的参数
 脚本中使用`body.xxx`获取`RequestBody`中的参数
@@ -178,3 +179,7 @@ db.slave.select('select * from sys_user');  //使用slave数据源
 server.compression.enabled=true #启用压缩
 server.compression.min-response-size=256 #大于256kb时压缩
 ```
+
+## 脚本内容被转义
+
+出现这种情况，请检查自身项目是否有`XSS`一类的过滤器，需要把`UI`界面对应的后台接口排除掉即可
