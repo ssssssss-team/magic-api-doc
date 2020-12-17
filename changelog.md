@@ -1,6 +1,6 @@
 # 更新日志
 
-## [v0.5.2] 2020.12.17
+## [v0.5.3] 2020.12.17
 - 修复无法修改分组路径的问题
 - 修复sql中无法引入局部变量的问题 [#I29LQG](https://gitee.com/ssssssss-team/magic-api/issues/I29LQG)
 - 修复未携带参数的问题
