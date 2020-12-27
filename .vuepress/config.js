@@ -65,17 +65,21 @@ module.exports = {
 				collapsable: false,
 				children: ['cases/sql','cases/transcation','cases/convert','cases/validate','cases/cache','cases/async']
 			},{
-				title : '函数库',
+				title: '模块',
 				collapsable: false,
-				children: ['functions/db','functions/magic','functions/assert','functions/log','functions/redis','functions/mongodb','functions/request','functions/response','functions/env']
+				children: ['modules/db', 'modules/magic', 'modules/assert', 'modules/log', 'modules/redis', 'modules/mongodb', 'modules/request', 'modules/response', 'modules/env']
 			},{
-				title : '函数扩展',
+				title: '函数库',
+				collapsable: false,
+				children: ['functions/aggregation', 'functions/other']
+			}, {
+				title: '类型扩展',
 				collapsable: false,
 				children: ['extension/','extension/object','extension/number','extension/date','extension/collection','extension/map','extension/class','extension/pattern']
 			},{
 				title : '高级应用',
 				collapsable: false,
-				children: ['custom/vue','custom/json','custom/page','custom/interceptor','custom/cache','custom/datasource','custom/extension','custom/store','custom/module','custom/magic','custom/swagger','custom/sql','custom/column']
+				children: ['custom/vue', 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/store', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function']
 			},{
 				title : 'FAQ',
 				collapsable: false,

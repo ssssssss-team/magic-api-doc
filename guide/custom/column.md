@@ -1,4 +1,4 @@
-# 自定义列名转换
+# 自定义列名转换 <Badge text="0.5.0+" type="error"/>
 
 ```java
 

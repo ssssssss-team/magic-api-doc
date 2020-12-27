@@ -2,25 +2,24 @@
 
 ## List转换
 ```javascript
-var list = [{
-    sex : 0,
-    name : '小明',
-    age : 19
-},{
-    sex : 1,
-    name : '小花',
-    age : 18
-}];
-
-var getAge = (age)=>{
-    return age > 18 ? '成人' : '未成年'
-}
+var list = [
+    {sex : 0,name : '小明',age : 19},
+    {sex : 1,name : '小花',age : 18}
+];
+var getAge = (age) => age > 18 ? '成人' : '未成年'
 // 利用map函数对list进行过滤
 return list.map((item)=>{
     age : getAge(item.age),
     sex : item.sex == 0 ? '男' : '女',
     name : item.name
 });
+// 以上代码可以使用Linq代替
+return 
+    select 
+        t.age > 18 ? '成人' : '未成年' age,
+        t.sex == 0 ? '男' : '女' sex,
+        t.name
+    from list t;
 /*结果
 [{
     "sex": "男",
@@ -35,15 +34,14 @@ return list.map((item)=>{
 ```
 ## List过滤
 ```javascript
-var list = [{
-    sex : 0,
-    name : '小明'
-},{
-    sex : 1,
-    name : '小花'
-}]
+var list = [
+    {sex : 0,name : '小明'},
+    {sex : 1,name : '小花'}
+]
 // 利用map函数对list进行过滤
 return list.filter((item)=>item.sex == 0);
+// 以上代码可以使用linq代替
+return select * from list t where t.sex = 0
 /* 结果
 [{
     "sex": 0,
@@ -53,18 +51,17 @@ return list.filter((item)=>item.sex == 0);
 ```
 ## List过滤和转换
 ```javascript
-var list = [{
-    sex : 0,
-    name : '小明'
-},{
-    sex : 1,
-    name : '小花'
-}]
+var list = [
+    {sex : 0,name : '小明'},
+    {sex : 1,name : '小花'}
+]
 // 利用map函数对list进行过滤，然后进行转换
 return list.filter((item)=>item.sex == 0).map((item)=>{
     sex : item.sex == 0 ? '男' : '女',
     name : item.name
 });
+// 以上代码可以使用linq代替
+return select t.sex ==0 ? '男' : '女' sex ,t.name from list t where t.sex = 0
 /* 结果
 [{
     "sex": "男",
@@ -127,6 +124,17 @@ return year2019.join(year2018, (left,right)=>left.item_code == right.item_code, 
    '去年' : right == null ? 'unknow' : right.sum_price,
    '环比去年增长' : right == null ? '-': (((left.sum_price - right.sum_price) / right.sum_price * 100) + "%")
 });
+// 以上代码可以使用linq代替
+return 
+    select 
+        t.pt 年份,
+        t.item_code 编号,
+        t.sum_price 今年,
+        ifnull(t1.sum_price,'unknow',t1.sum_price) 去年,
+        // ifnull 会对参数进行计算，会报错 所以这里采用三元运算符
+        t1.sum_price == null ? '-' : ((t.sum_price - t1.sum_price) / t1.sum_price).asPercent(2) 环比去年增长 
+    from year2019 t
+    left join year2018 t1 on t.item_code = t1.item_code
 /*
 [
     {"年份": 2019, "今年": 2234, "去年": 1234, "环比去年增长": "81.03728%", "编号": "code_1"},
@@ -136,3 +144,4 @@ return year2019.join(year2018, (left,right)=>left.item_code == right.item_code, 
 ]
 */
 ```
+
