@@ -1,5 +1,14 @@
 # 更新日志
 
+## [v0.6.0] 2021.01.04
+- **新增在线自定义函数**
+- 增强`import`语句，可引入其他接口或自定义的函数
+- 修复函数`round`、`ceil`、`floor`、`precent`未注册的问题
+- 修复`Vue`组件可能出现不刷新的问题
+- 优化`ifnull` 函数，改为`ifnull(var,defaultValue)` 的形式
+- 优化`magic.call/execute`方法，不在要求携带`prefix`
+- 优化正则表达式语法高亮
+
 ## [v0.5.5] 2020.12.28
 - **新增`Linq`式查询以及相关函数**
 - 新增聚合函数`group_concat`、`count`、`sum`、`max`、`min`、`avg`
