@@ -19,6 +19,7 @@
 - [如何自定义返回结果](#如何自定义返回结果)
 - [页面加载缓慢](#页面加载缓慢)
 - [脚本内容被转义](#脚本内容被转义)
+- [执行测试无响应](#执行测试无响应)
 
 ## 如何获取RequestBody中的参数
 脚本中使用`body.xxx`获取`RequestBody`中的参数
@@ -175,6 +176,7 @@ db.slave.select('select * from sys_user');  //使用slave数据源
 ## 页面加载缓慢
 
 由于`monaco-editor`编辑器比较大，建议开启压缩静态资源
+
 ```properties
 server.compression.enabled=true #启用压缩
 server.compression.min-response-size=256 #大于256kb时压缩
@@ -183,3 +185,10 @@ server.compression.min-response-size=256 #大于256kb时压缩
 ## 脚本内容被转义
 
 出现这种情况，请检查自身项目是否有`XSS`一类的过滤器，需要把`UI`界面对应的后台接口排除掉即可
+
+## 执行测试无响应
+
+目前已知有两种情况
+
+- 使用了Spring Boot 2.3.5版本，升级至2.3.6解决
+- 使用了`nginx`代理，加一条配置`proxy_buffering off;`解决
