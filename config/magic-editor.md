@@ -18,8 +18,16 @@ sidebarDepth: 3
         qqGroup: true
     },
     request: {
-        beforeSend: function(config){console.log('请求设置',cofnig);},
-        onError: function(err){console.log('请求出错');return Promise.reject(err)},
+        beforeSend: function (config) {
+            console.log('请求设置', cofnig);
+            return config;
+        }
+    ,
+        onError: function (err) {
+            console.log('请求出错');
+            return Promise.reject(err)
+        }
+    ,
     },
     response: {
         onSuccess: function(resp){console.log('请求成功',resp);return resp;},
@@ -103,24 +111,59 @@ sidebarDepth: 3
                 'button-disabled-background' : '#5A5A5A',
                 'select-background' : '#3C3F41',
                 'select-hover-background' : '#3C3F41',
-                'select-option-background' : '#3C3F41',
-                'select-option-hover-background' : '#4B6EAF',
-                'select-inputable-background' : '#45494a',
-                'select-inputable-border' : 'transparent',
-                'toolbox-list-header-icon-color' : '#AFB1B3'
+                    'select-option-background'
+            :
+                '#3C3F41',
+                    'select-option-hover-background'
+            :
+                '#4B6EAF',
+                    'select-inputable-background'
+            :
+                '#45494a',
+                    'select-inputable-border'
+            :
+                'transparent',
+                    'toolbox-list-header-icon-color'
+            :
+                '#AFB1B3'
             }
         }
     }
 }
 ```
 
+### 在后台配置
+
+在后台配置需要配置属性`magic-api.editor-config` 如：`magic-api.editor-config=classpath:./magic-editor-config.js`
+
+文件内容如下：
+
+```js
+var MAGIC_EDITOR_CONFIG = {
+    title: 'test',
+    header: {
+        skin: false,    // 屏蔽皮肤按钮
+        document: false,    // 屏蔽文档按钮
+        repo: false,    // 屏蔽gitee和github
+        qqGroup: false  // 屏蔽加入QQ群
+    }
+    // 其它配置参考本页中其它配置项
+}
+```
+
+### iframe中配置
+
+在`iframe`中引用和在后台类似，需要在页面中定义变量`MAGIC_EDITOR_CONFIG`即可
+
 ## baseURL
+
 - 类型: `String`
-`UI`对应的后台服务地址，默认为当前路径,如:`http://localhost:9999/magic/web`
+  `UI`对应的后台服务地址，默认为当前路径,如:`http://localhost:9999/magic/web`
 
 ## serverURL
+
 - 类型: `String`
-接口实际请求路径,默认为当前路径，如:`http://localhost:9999/`
+  接口实际请求路径,默认为当前路径，如:`http://localhost:9999/`
 
 ## title
 - 类型: `String`

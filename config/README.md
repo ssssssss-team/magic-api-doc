@@ -15,6 +15,7 @@ magic-api:
   datasource: test # 多数据源时配置，否则不用配置
   allow-override: false #禁止覆盖应用接口
   sql-column-case: camel #启用驼峰命名转换
+  editor-config: classpath:./magic-editor-config.js #编辑器配置
   banner: true # 打印banner
   thread-pool-executor-size: 8 # async语句的线程池大小
   throw-exception: false #执行出错时是否抛出异常
@@ -65,24 +66,35 @@ magic-api:
 `magic-api.map-underscore-to-camel-case` 是否开启下划线转驼峰命名
 
 ## throw-exception
+
 - 类型：`boolean`
 - 默认值：`false`
 
 `magic-api.throw-exception` 执行出现异常时是否抛出异常（默认不抛出异常）
 
 ## datasource
+
 - 类型：`String`
 - 默认值：`null`(默认数据源)
 
 `magic-api.datasource` 接口存储选择的数据源（默认使用默认数据源）
 
+## editor-config <Badge text="0.6.1+" type="error"/>
+
+- 类型：`String`
+- 默认值：`null`(默认不配置)
+
+`magic-api.editor-config` 编辑器配置文件路径,具体请参考[magic-editor配置](./magic-editor)
+
 ## auto-import-module <Badge text="0.3.2+" type="error"/>
+
 - 类型：`String`
 - 默认值：`db`(默认导入db模块，多个值时用","分隔)
 
 `magic-api.auto-import-module` 默认导入的模块
 
 ## refresh-interval <Badge text="0.3.4+" type="error"/>
+
 - 类型：`int`
 - 默认值：`0` （<=0为不启用）
 
