@@ -15,11 +15,8 @@
 server.port=9999
 #配置web页面入口
 magic-api.web=/magic/web
-#以下配置需跟实际情况修改
-spring.datasource.url=jdbc:mysql://localhost/test
-spring.datasource.username=root
-spring.datasource.password=123456789
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+#配置文件存储位置。当以classpath开头时，为只读模式
+magic-api.workspace=/data/magic-api
 ```
 ### 执行建表语句
 

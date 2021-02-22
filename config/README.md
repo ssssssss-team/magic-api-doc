@@ -8,11 +8,12 @@ sidebarDepth: 3
 ```yml
 magic-api:
   web: /magic/web # UI请求的界面以及UI服务地址
+  workspace: /data/magic-api # magic-api 工作目录
   prefix: / # 接口前缀，可以不配置
   auto-import-module: db  # 自动导入的模块
   auto-import-package: java.lang.*,java.util.* #自动导包
   refresh-interval: 0  #不启用刷新
-  datasource: test # 多数据源时配置，否则不用配置
+  
   allow-override: false #禁止覆盖应用接口
   sql-column-case: camel #启用驼峰命名转换
   editor-config: classpath:./magic-editor-config.js #编辑器配置
@@ -53,6 +54,12 @@ magic-api:
 
 `magic-api.web` WEB页面的请求路径，可空，填写时开启，否则不开启，生产环境建议不开启
 
+## workspace <Badge text="0.7.0+" type="error"/>
+- 类型：`String`
+- 默认值：`/data/magic-api`
+
+`magic-api.workspace` `magic-api`的工作目录，当以`classpath:` 开头时，则可以读jar内资源，且为只读模式(一般部署使用)。
+
 ## banner
 - 类型：`boolean`
 - 默认值：`true`
@@ -72,7 +79,7 @@ magic-api:
 
 `magic-api.throw-exception` 执行出现异常时是否抛出异常（默认不抛出异常）
 
-## datasource
+## ~~datasource(v0.7.0+ 删除)~~
 
 - 类型：`String`
 - 默认值：`null`(默认数据源)
@@ -125,7 +132,7 @@ magic-api:
 ## sql-column-case <Badge text="0.5.0+" type="error"/>
 
 - 类型：`string`
-- 默认值 : `default`、
+- 默认值 : `default`
 
 `magic-api.sql-column-case` 列名转换规则
 ### 可选值
