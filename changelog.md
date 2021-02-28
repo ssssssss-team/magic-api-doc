@@ -1,5 +1,20 @@
 # 更新日志
 
+## [v0.7.1] 2021.03.01
+- 新增数据库存储、`Redis`存储方案
+- 新增支持可自定义存储方式
+- 新增屏蔽检测更新的选项
+- 新增接口执行时间`executeTime`
+- 修复无法自动注入`db`模块的BUG [I38LDB](https://gitee.com/ssssssss-team/magic-api-spring-boot-starter/issues/I38LDB)
+- 修复`swagger`无法测试带有`RequestBody`的请求
+- 修复类型转换时值为0的问题 [I398ND](https://gitee.com/ssssssss-team/magic-api/issues/I398ND)
+- 修复在省略`as`的情况下，代码提示不正确的问题
+- 修复切换脚本时，代码编辑器滚动条定位不正确的问题
+- 优化生成`swagger`文档，显示接口描述
+- 优化读取资源逻辑，兼容`Spring Boot` `2.1.x` `2.2.x` `2.3.x` `2.4.x`
+- 优化代码，增加异常日志输出，方便定位问题
+
+
 ## [v0.7.0] 2021.02.22
 - **弃用数据库存储方案,改为文件存储**
 - 新增`===`、`!==` 比较运算符

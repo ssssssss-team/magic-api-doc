@@ -11,6 +11,7 @@ sidebarDepth: 3
     serverURL: 'http://localhost:9999/',    // 必填
     title: 'magic-api',
     defaultTheme: 'default',
+    checkUpdate: true,
     header: {
         skin: true,
         document: true,
@@ -207,6 +208,9 @@ var MAGIC_EDITOR_CONFIG = {
 请求出错回调方法
 `onError: (err) => Promise.reject(err)`
 
+## checkUpdate <Badge text="0.7.1+" type="error"/>
+- 类型: `Boolean`
+用于控制是否启用检测更新，默认是`true`
 
 ## response
 - 类型: `Object`
