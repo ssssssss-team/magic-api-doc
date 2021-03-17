@@ -175,13 +175,14 @@ var MAGIC_EDITOR_CONFIG = {
 - 类型: `String`
 编辑器的默认皮肤，默认值为`default`，内置有`default`和`dark`
 
-## header
-- 类型: `Object`
-编辑器的`header`显示控制
-
 ## autoSave
 - 类型: `Boolean`
-编辑器是否启用自动保存，默认为`true`
+  编辑器是否启用自动保存，默认为`true`
+  
+## header
+- 类型: `Object`
+  编辑器的`header`显示控制
+
 
 ### skin
 - 类型: `Boolean`
