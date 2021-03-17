@@ -12,6 +12,7 @@ sidebarDepth: 3
     title: 'magic-api',
     defaultTheme: 'default',
     checkUpdate: true,
+    autoSave: true,
     header: {
         skin: true,
         document: true,
@@ -177,6 +178,10 @@ var MAGIC_EDITOR_CONFIG = {
 ## header
 - 类型: `Object`
 编辑器的`header`显示控制
+
+## autoSave
+- 类型: `Boolean`
+编辑器是否启用自动保存，默认为`true`
 
 ### skin
 - 类型: `Boolean`

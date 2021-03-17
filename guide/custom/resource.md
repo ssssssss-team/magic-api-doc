@@ -3,11 +3,21 @@
 ## 使用内置存储方案
 
 ### 数据库
+#### 使用配置文件
+```yml
+magic-api:
+  resource:
+    type: database
+    tablename: magic_api_file
+    prefix: /magic-api
+    readonly: false
+```
+#### 使用代码配置
 ```java
 @Bean
 public Resource databaseResource(JdbcTemplate jdbcTemplate){
     /**
-     *  magic-api_file 为表名，其表结构为
+     *  magic_api_file 为表名，其表结构为
      *  file_path varchar(512) 主键
      *  file_content mediumtext/clob(mysql/oracle)
      *  0.7以上版本将不再提供建表语句，需自行建表
@@ -16,6 +26,15 @@ public Resource databaseResource(JdbcTemplate jdbcTemplate){
 }
 ```
 ### Redis
+#### 使用配置文件
+```yml
+magic-api:
+  resource:
+    type: redis
+    prefix: magic-api
+    readonly: false
+```
+#### 使用代码配置
 ```java
 @Bean
 public Resource redisResource(StringRedisTemplate redisTemplate){

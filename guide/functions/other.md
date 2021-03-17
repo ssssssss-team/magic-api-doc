@@ -7,8 +7,8 @@
 - 返回值：`Object`
 - 函数说明：对空值进行判断，返回特定值
 ```js
-return ifnull(null,1,2) // 1
-// return ifnull(0,1,2) // 2
+return ifnull(null,1) // 1
+// return ifnull(0,1) // 0
 ```
 
 ## date_format

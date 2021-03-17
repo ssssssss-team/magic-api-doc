@@ -130,7 +130,7 @@ return
         t.pt 年份,
         t.item_code 编号,
         t.sum_price 今年,
-        ifnull(t1.sum_price,'unknow',t1.sum_price) 去年,
+        ifnull(t1.sum_price,'unknow') 去年,
         // ifnull 会对参数进行计算，会报错 所以这里采用三元运算符
         t1.sum_price == null ? '-' : ((t.sum_price - t1.sum_price) / t1.sum_price).asPercent(2) 环比去年增长 
     from year2019 t

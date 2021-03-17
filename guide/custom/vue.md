@@ -50,7 +50,7 @@ html,body,#app {
 <dependency>
     <groupId>org.ssssssss</groupId>
     <artifactId>magic-api-spring-boot-starter</artifactId>
-    <version>latest-version</version>
+    <version>magic-api-lastest-version</version>
     <exclusions>
         <exclusion>
             <groupId>org.ssssssss</groupId>

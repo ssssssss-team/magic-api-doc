@@ -8,15 +8,27 @@ sidebarDepth: 3
 ```yml
 magic-api:
   web: /magic/web # UI请求的界面以及UI服务地址
-  workspace: /data/magic-api # magic-api 工作目录
+  resource: #配置存储方式
+    type: database # 配置存储在数据库中
+    tableName: magic_api_file # 数据库中的表名
+    prefix: /magic-api # key前缀
+    readonly: false # 是否是只读模式
   prefix: / # 接口前缀，可以不配置
   auto-import-module: db  # 自动导入的模块
   auto-import-package: java.lang.*,java.util.* #自动导包
   refresh-interval: 0  #不启用刷新
-  
   allow-override: false #禁止覆盖应用接口
   sql-column-case: camel #启用驼峰命名转换
   editor-config: classpath:./magic-editor-config.js #编辑器配置
+  response: |- #配置JSON格式，格式为magic-script中的表达式
+    {
+      code: code,
+      message: message,
+      data,
+      timestamp,
+      requestTime,
+      executeTime,
+    }
   banner: true # 打印banner
   thread-pool-executor-size: 8 # async语句的线程池大小
   throw-exception: false #执行出错时是否抛出异常
@@ -54,11 +66,33 @@ magic-api:
 
 `magic-api.web` WEB页面的请求路径，可空，填写时开启，否则不开启，生产环境建议不开启
 
-## workspace <Badge text="0.7.0+" type="error"/>
+## ~~workspace~~(v1.0.0+中删除)
 - 类型：`String`
 - 默认值：`/data/magic-api`
 
 `magic-api.workspace` `magic-api`的工作目录，当以`classpath:` 开头时，则可以读jar内资源，且为只读模式(一般部署使用)。
+## resource 
+### type
+- 类型: `String`
+- 默认值: `file`
+
+`magic-api.resource.type` 资源存储类型，默认为存文件，可选`file`、`database`、`file`
+### location
+- 类型: `String`
+- 默认值: `/data/magic-api`
+`magic-api.resource.location` 文件存储位置，此项配置为`file`专用，当以`classpath:` 开头时，则可以读jar内资源，且为只读模式(一般部署使用)。
+### tablename
+- 类型: `String`
+- 默认值: `magic_api_file`
+`magic-api.resource.tablename` 数据库存储时使用的表名，此项为`database`专用
+### prefix
+- 类型: `String`
+- 默认值: `magic-api`
+`magic-api.resource.prefix` 使用`database`、`redis`存储时的`key`前缀
+### readonly
+- 类型: `boolean`
+- 默认值: `false`
+`magic-api.resource.readonly` 是否为只读模式
 
 ## banner
 - 类型：`boolean`

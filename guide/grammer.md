@@ -326,3 +326,24 @@ for(index in range(1,10)){
 }
 return list.map(item=>item.get());  // 循环获取结果
 ```
+
+## 类型转换 <Badge text="0.7.0+" type="error"/>
+通过`::`进行类型转换，如`xxx::int`、`xxx::double`等，
+当前支持转换类型有`int`、`double`、`long`、`byte`、`short`、`float`、`date`
+```js
+var a = "1";
+return {
+    v1: a::int,
+    v2: a::int(0),  //转换失败时，值为0
+    v3: "2020-01-01"::date('yyyy-MM-dd') //转为Date
+}
+```
+
+## 嵌入其它脚本语言 <Badge text="1.0.0+" type="error"/>
+```js
+var name = "hello";
+var test = ```javascript
+    name + ' ~ world'
+```;
+return test();
+```

@@ -82,3 +82,72 @@ try{
     db.rollback();  // 回滚事务
 }
 ```
+
+## 单表操作API <Badge text="1.0.0+" type="error"/>
+
+操作入口：`db.table('table_name')`
+
+### column
+- 入参：`column`: `String` 列名
+- 作用：设置要查询列的,`select`语句中有效
+
+### column
+- 入参：`column`: `String` 列名
+- 入参： `value` : `Object` 值
+- 作用：设置要操作的列的值,非`select`语句中有效
+
+### primary
+- 入参：`primary`: `String` 主键
+- 作用：设置主键列，在`update`中语句有效，或`save`方法判断标准
+
+### insert
+- 入参: `data` : `Map` insert的列和值，可省略(通过column设置)
+```js
+// insert into sys_user(user_name,role) values('李富贵','admin')
+return db.table('sys_user').insert({ user_name : '李富贵', role : 'admin'})
+```
+### update
+- 入参: `data` : `Map` insert的列和值，可省略(通过column设置)
+```js
+// update sys_user set user_name = '王二狗' where id = '1'
+return db.table('sys_user').primary('id','1').update({ user_name : '王二狗'})
+```
+
+### select
+查询list（与db.select 作用相同）
+```js
+// select * from sys_user
+return db.table('sys_user').select()
+```
+
+### page
+分页查询（与db.page 作用相同）
+```js
+// select * from sys_user
+return db.table('sys_user').page()
+```
+
+### where
+
+设置查询条件
+
+- eq --> `==`
+- ne --> `<>`
+- lt --> `<`
+- gt --> `>`
+- lte --> `<=`
+- gte --> `>=`
+- in --> `in`
+- notIn --> `not in`
+- like --> `like`
+- notLike --> `not like`
+
+```js
+// select * from sys_user where user_name like '%李富贵%' and role = 'admin'
+return db.table('sys_user')
+    .where()
+    .like('user_name','%李富贵%')
+    .eq('role','admin')
+    .select()
+```
+#### 其它的自己摸索吧，API抄的mybatis-plus，文档写不动了
