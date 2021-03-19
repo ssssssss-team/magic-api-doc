@@ -11,6 +11,7 @@ magic-api:
   resource: #配置存储方式
     type: database # 配置存储在数据库中
     tableName: magic_api_file # 数据库中的表名
+    datasource: magic #指定数据源（单数据源时无需配置，多数据源时默认使用主数据源，如果存在其他数据源中需要指定。）
     prefix: /magic-api # key前缀
     readonly: false # 是否是只读模式
   prefix: / # 接口前缀，可以不配置
@@ -81,10 +82,14 @@ magic-api:
 - 类型: `String`
 - 默认值: `/data/magic-api`
 `magic-api.resource.location` 文件存储位置，此项配置为`file`专用，当以`classpath:` 开头时，则可以读jar内资源，且为只读模式(一般部署使用)。
-### tablename
+### tableName
 - 类型: `String`
 - 默认值: `magic_api_file`
-`magic-api.resource.tablename` 数据库存储时使用的表名，此项为`database`专用
+`magic-api.resource.tableName` 数据库存储时使用的表名，此项为`database`专用
+### datasource
+- 类型： `String`
+- 默认值：`null`
+`magic-api.resource.datasource`指定数据源（单数据源时无需配置，多数据源时默认使用主数据源，如果存在其他数据源中需要指定。）
 ### prefix
 - 类型: `String`
 - 默认值: `magic-api`

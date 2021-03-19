@@ -7,10 +7,11 @@
 ```yml
 magic-api:
   resource:
-    type: database
-    tablename: magic_api_file
-    prefix: /magic-api
-    readonly: false
+    type: database # 配置存储在数据库中
+    tableName: magic_api_file # 数据库中的表名
+    datasource: magic #指定数据源（单数据源时无需配置，多数据源时默认使用主数据源，如果存在其他数据源中需要指定。）
+    prefix: /magic-api # key前缀
+    readonly: false # 是否是只读模式
 ```
 #### 使用代码配置
 ```java
@@ -30,9 +31,9 @@ public Resource databaseResource(JdbcTemplate jdbcTemplate){
 ```yml
 magic-api:
   resource:
-    type: redis
-    prefix: magic-api
-    readonly: false
+    type: redis# 配置存储在redis中
+    prefix: magic-api # key前缀
+    readonly: false # 是否是只读模式
 ```
 #### 使用代码配置
 ```java
