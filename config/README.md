@@ -21,6 +21,7 @@ magic-api:
   allow-override: false #禁止覆盖应用接口
   sql-column-case: camel #启用驼峰命名转换
   editor-config: classpath:./magic-editor-config.js #编辑器配置
+  support-cross-domain: true # 跨域支持，默认开启
   response: |- #配置JSON格式，格式为magic-script中的表达式
     {
       code: code,
@@ -72,7 +73,7 @@ magic-api:
 - 默认值：`/data/magic-api`
 
 `magic-api.workspace` `magic-api`的工作目录，当以`classpath:` 开头时，则可以读jar内资源，且为只读模式(一般部署使用)。
-## resource 
+## resource <Badge text="1.0.0+" type="error"/>
 ### type
 - 类型: `String`
 - 默认值: `file`
@@ -99,6 +100,17 @@ magic-api:
 - 默认值: `false`
 `magic-api.resource.readonly` 是否为只读模式
 
+## support-cross-domain <Badge text="1.0.0+" type="error"/>
+- 类型: `Boolean`
+- 默认值: `true`
+
+`magic-api.support-cross-domain` 是否支持跨域，默认开启
+
+## response <Badge text="1.0.0+" type="error"/>
+- 类型: `String`
+- 默认值: `null`
+
+`magic-api.response` 配置`JSON`序列化格式，值为`magic-script`中的表达式
 ## banner
 - 类型：`boolean`
 - 默认值：`true`
