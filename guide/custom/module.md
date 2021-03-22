@@ -28,3 +28,16 @@ public class TestFunctions implements MagicModule {
 import test;    //导入模块
 test.println('Custom Module!'); 
 ```
+
+全局导入模块  (application.yaml)
+```yaml
+# org.ssssssss.magicapi.spring.boot.starter.MagicAPIProperties#autoImportModule 
+# 覆盖默认配置时候别忘了加上db (如果不需要可忽略)
+magic-api:
+  auto-import-module: db,test
+```
+
+使用全局模块
+```js
+test.println('Custom Module!'); 
+```
