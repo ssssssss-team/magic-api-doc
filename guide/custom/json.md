@@ -10,7 +10,7 @@ public class CustomJsonValueProvider implements ResultProvider {
     *   定义返回结果，默认返回JsonBean
     */
 	@Override
-	public Object buildResult(int code, String message, Object data) {
+	public Object buildResult(RequestEntity requestEntity, int code, String message, Object data) {
         // 如果对分页格式有要求的话，可以对data的类型进行判断，进而返回不同的格式
 		return new HashMap<String,Object>(){
 			{

@@ -14,7 +14,6 @@
 - [${}和#{}的区别](#和-的区别)
 - [如何循环拼接参数](#如何循环拼接参数)
 - [多数据源如何配置](#多数据源如何配置)
-- [运行时如何动态增删改数据源](#运行时如何动态增删改数据源)
 - [SQL执行报错java.sql.SQLFeatureNotSupportedException: null](#sql执行报错java-sql-sqlfeaturenotsupportedexception-null)
 - [如何自定义返回结果](#如何自定义返回结果)
 - [页面加载缓慢](#页面加载缓慢)
@@ -72,13 +71,8 @@ logging:
 ## 如何给接口添加权限
 
 一般情况采用`拦截器`实现
-在`接口选项`中添加
-```json
-{
-  "permission" : "sys:user:view"
-}
-```
-拦截器实现：
+在`接口选项`中配置`permisson`或`role`或自定义选项
+随后在拦截器实现：
 ```java
 @Component
 @Order(1)   //拦截器顺序
@@ -87,11 +81,12 @@ public class PermissionInterceptor implements RequestInterceptor {
     @Override
     public Object preHandle(ApiInfo info, MagicScriptContext context, HttpServletRequest request, HttpServletResponse response) {
         // 获取配置的接口选项属性
-        Object permissionCode = info.getOptionValue('permission');
+        String permissionCode = info.getOptionValue(Options.PERMISSION);
         // 执行自己的代码逻辑进行判断是否有权限
         // ....
         if(无权限){
-            return new JsonBean<>(-2,"无权访问");
+        	// 需要注意的是，拦截器返回的不会走ResultProvider。
+            return new JsonBean<>(403,"无权访问");
         }
         // 放行
         return null;
@@ -101,21 +96,13 @@ public class PermissionInterceptor implements RequestInterceptor {
 
 ## 如何给UI添加权限
 
-采用`拦截器`实现
-```java
-@Component
-public class UIPermissionInterceptor implements RequestInterceptor {
-    @Override
-    public boolean allowVisit(HttpServletRequest request, Authorization authorization) {
-        // 这里可以根据实际情况进行修改
-        // 不允许执行删除和保存方法
-        return authorization != Authorization.DELETE && authorization != Authorization.SAVE;
-    }
-}
-```
+请参考[自定义UI鉴权](./custom/authorization)
+
 ## 对于UI界面如何使用Token鉴权
 
 目前使用Vue的方式，对请求进行拦截进行实现，请参考[在Vue中使用](./custom/vue)和[magic-editor配置](../config/magic-editor)
+
+通过上述配置，可使编辑器在请求时携带`Token`信息，然后由自己应用进行统一鉴权配置。
 
 ## ${}和#{}的区别
 主要区别在于`${}`用于拼接SQL(会产生SQL注入问题)，`#{}`会替换成占位符（不会产生SQL注入问题），这里的区别于`Mybatis`一致
@@ -159,15 +146,11 @@ db.select('select * from sys_user');  //使用默认数据源
 db.slave.select('select * from sys_user');  //使用slave数据源
 ```
 
-## 运行时如何动态增删改数据源
-
-需要将`MagicDynamicDataSource`对象注入进来，通过操作该对象的`add`、`delete`等方法进行操作
-
 ## SQL执行报错java.sql.SQLFeatureNotSupportedException: null
 原因：druid版本过低，升级至最新版后即可
 
 ## 如何自定义返回结果
-
+- 通过配置文件进行配置，具体参考[spring-boot配置](../config)
 - 通过`自定义JSON结果`，具体定义方法查看[自定义JSON结果](./custom/json)
 - 通过`自定义拦截器`拦截返回自己想要的格式，具体定义方法查看[自定义拦截器](./custom/interceptor)
 - 通过`spring`的拦截器返回想要的格式，如`ResponseBodyAdvice`，`HandlerMethodReturnValueHandler`（这种方式目前会影响到UI,故不推荐使用）

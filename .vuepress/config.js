@@ -79,7 +79,7 @@ module.exports = {
 			},{
 				title : '高级应用',
 				collapsable: false,
-				children: ['custom/vue', 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/resource', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function','custom/language','custom/login']
+				children: ['custom/vue', 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/authorization', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/resource', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function','custom/language']
 			},{
 				title : 'FAQ',
 				collapsable: false,

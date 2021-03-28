@@ -1,4 +1,4 @@
-# 自定义用户名密码登录 <Badge text="1.0.0+" type="error"/>
+# 自定义UI鉴权 <Badge text="1.0.0+" type="error"/>
 
 ```java
 /**
@@ -34,6 +34,24 @@ public class CustomAuthorizationInterceptor implements AuthorizationInterceptor 
 			return new MagicUser("1","admin","tokenvalue......");
         }
 		throw new MagicLoginException("用户名或密码不正确");
+	}
+
+	/**
+     * 验证是否有权限访问功能
+	 */
+	@Override
+	public boolean allowVisit(MagicUser magicUser, HttpServletRequest request, Authorization authorization) {
+		// Authorization.SAVE   执行保存接口、函数
+        // Authorization.VIEW   查看接口、函数
+        // Authorization.DELETE 删除接口、函数
+        // Authorization.DOWNLOAD   导出接口、函数
+        // Authorization.UPLOAD 上传接口、函数
+        // Authorization.DATASOURCE_SAVE    保存数据源
+        // Authorization.DATASOURCE_VIEW    查看数据源详情
+        // Authorization.DATASOURCE_DELETE  删除数据源
+		
+		// 不允许删除
+		return authorization != Authorization.DELETE && authorization != Authorization.DATASOURCE_DELETE;
 	}
 
 }
