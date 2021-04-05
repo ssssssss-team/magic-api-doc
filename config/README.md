@@ -78,7 +78,7 @@ magic-api:
 - 类型: `String`
 - 默认值: `file`
 
-`magic-api.resource.type` 资源存储类型，默认为存文件，可选`file`、`database`、`file`
+`magic-api.resource.type` 资源存储类型，默认为存文件，可选`file`、`database`、`redis`
 ### location
 - 类型: `String`
 - 默认值: `/data/magic-api`
