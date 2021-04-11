@@ -1,4 +1,11 @@
 # 更新日志
+## [v1.0.2] 2021.04.12
+- 新增示例项目 [magic-api-example](https://gitee.com/ssssssss-team/magic-api-example)
+- 新增错误提示超时时间配置
+- 新增单表API`delete`方法
+- 修复`oracle`执行插入无法返回主键的问题
+- 修复单表API中`save`方法返回的不是主键的问题
+- 优化代码提高兼容性，不在强制要求配置数据源
 
 ## [v1.0.1] 2021.04.06
 - 新增`uuid`函数

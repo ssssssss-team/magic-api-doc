@@ -9,7 +9,7 @@ public class TestLanguage implements LanguageProvider {
 
 	@Override
 	public boolean support(String languageName) {
-		return "test";
+		return "test".equalsIgnoreCase(languageName);
 	}
 
 	@Override

@@ -12,7 +12,8 @@ sidebarDepth: 3
     title: 'magic-api',
     defaultTheme: 'default',
     checkUpdate: true,
-    autoSave: true,
+    autoSave: true, 
+    decorationTimeout: 10000,
     header: {
         skin: true,
         document: true,
@@ -175,9 +176,13 @@ var MAGIC_EDITOR_CONFIG = {
 - 类型: `String`
 编辑器的默认皮肤，默认值为`default`，内置有`default`和`dark`
 
-## autoSave
+## autoSave <Badge text="1.0.0+" type="error"/>
 - 类型: `Boolean`
-  编辑器是否启用自动保存，默认为`true`
+编辑器是否启用自动保存，默认为`true`
+
+## decorationTimeout <Badge text="1.0.2+" type="error"/>
+- 类型：`Number`
+编辑器错误提示显示时长，< 0为一直显示，单位为毫秒，默认10秒 
   
 ## header
 - 类型: `Object`
