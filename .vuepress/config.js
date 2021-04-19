@@ -67,7 +67,7 @@ module.exports = {
 			},{
 				title: '模块',
 				collapsable: false,
-				children: ['modules/db', 'modules/magic', 'modules/assert', 'modules/log', 'modules/redis', 'modules/mongodb', 'modules/request', 'modules/response', 'modules/env']
+				children: ['modules/db', 'modules/magic', 'modules/assert', 'modules/log', 'modules/redis', 'modules/mongodb', 'modules/request', 'modules/response', 'modules/env', 'modules/http']
 			},{
 				title: '函数库',
 				collapsable: false,

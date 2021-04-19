@@ -1,4 +1,21 @@
 # 更新日志
+
+## [v1.1.0] 2021.04.19
+- 新增分组选项、分组路径变量配置
+- 新增`json`、`stringify` 转换器，用于字符串转`JSON`和`JSON`转字符串
+- 新增全局搜索功能
+- 新增阻止页面关闭的配置
+- 新增数据源参数`maxRows`
+- 新增`http`模块(基于`RestTemplate`)
+- 新增单表`API`方法`orderBy`、`groupBy`
+- 新增单表`API`方法`notNull`、`notBlank` 用于过滤`where`中非空参数
+- 修复断点会自动清除的BUG
+- 修复使用`redis`存储时无法删除接口的BUG
+- 修复脚本不支持`new`内部类的问题
+- 优化测试逻辑，测试时将`serverURL`参数当为`baseURL`，不在拼接处理
+- 优化`swagger`文档生成，支持`path`参数
+- 优化`UI`样式，显示接口的请求方法
+
 ## [v1.0.2] 2021.04.12
 - 新增示例项目 [magic-api-example](https://gitee.com/ssssssss-team/magic-api-example)
 - 新增错误提示超时时间配置
