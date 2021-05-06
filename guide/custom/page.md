@@ -16,7 +16,7 @@ public class MyPageProvider implements PageProvider {
         long page = 1;
         long pageSize = 100;
         // 计算limit以及offset
-        return new Page((page - 1) * pageSize, pageSize);
+        return new Page(pageSize, (page - 1) * pageSize);
 
     }
 }
