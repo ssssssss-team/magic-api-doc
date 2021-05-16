@@ -1,4 +1,5 @@
-# 在Java中调用接口
+# Java相关接口
+本接口主要是提供给Java调用，实现接口、函数、分组的增删改查、已经接口的调用
 
 编写java代码如下：
 ```java
@@ -14,5 +15,7 @@ public Object invokeApi(){
     // return magicAPIService.call('post','/user/add');
     // 执行MagicAPI中的接口,并传入参数,返回带code和message信息
     // return magicAPIService.call('post','/user/add',map);
+    // 其它接口请参考MagicAPIService中的方法以及注释
 }
+
 ```

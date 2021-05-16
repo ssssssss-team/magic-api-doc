@@ -49,7 +49,7 @@ module.exports = {
 				link : 'https://gitee.com/ssssssss-team/magic-script'
 			},{
 				text : 'magic-editor',
-				link : 'https://github.com/ssssssss-team/magic-editor'
+				link : 'https://gitee.com/ssssssss-team/magic-editor'
 			}]
 		},{
 			text : '加入QQ群',

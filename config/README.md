@@ -31,6 +31,10 @@ magic-api:
       requestTime,
       executeTime,
     }
+  response-code:
+    success: 1 #执行成功的code值
+    invalid: 0 #参数验证未通过的code值
+    exception: 1 #执行出现异常的code值
   banner: true # 打印banner
   thread-pool-executor-size: 8 # async语句的线程池大小
   throw-exception: false #执行出错时是否抛出异常
@@ -111,17 +115,25 @@ magic-api:
 - 默认值: `null`
 
 `magic-api.response` 配置`JSON`序列化格式，值为`magic-script`中的表达式
+
+## response-code <Badge text="1.1.2+" type="error"/>
+### success
+- 类型: `int`
+- 默认值: `1`
+ `magic-api.response-code.success` 执行成功的`code`值
+### invalid
+- 类型: `int`
+- 默认值: `0`
+  `magic-api.response-code.invalid` 参数验证未通过的`code`值
+### exception
+- 类型: `int`
+- 默认值: `-1`
+  `magic-api.response-code.exception` 执行出现异常的`code`值
 ## banner
 - 类型：`boolean`
 - 默认值：`true`
 
 `magic-api.banner` 是否打印banner
-
-## map-underscore-to-camel-case
-- 类型：`boolean`
-- 默认值：`true`
-
-`magic-api.map-underscore-to-camel-case` 是否开启下划线转驼峰命名
 
 ## throw-exception
 
