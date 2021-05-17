@@ -216,7 +216,7 @@ return vals.every(e=>e > 0); // true
 
 ```js
 var vals = [1,2,3,4,5,6,7];
-return vals.every(e=>e == 0); // false
+return vals.some(e=>e == 0); // false
 ```
 
 ## reduce <Badge text="0.4.7+" type="error"/>
