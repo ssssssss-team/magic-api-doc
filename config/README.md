@@ -31,7 +31,9 @@ magic-api:
       requestTime,
       executeTime,
     }
-  response-code:
+  cluster-config:
+    enable: false # 是否开启集群配置
+  response-code-config:
     success: 1 #执行成功的code值
     invalid: 0 #参数验证未通过的code值
     exception: 1 #执行出现异常的code值
@@ -40,7 +42,7 @@ magic-api:
   throw-exception: false #执行出错时是否抛出异常
   cache-config: # 缓存相关配置
     capacity: 10000 #缓存容量
-    ttl: -1 # 永不过期，
+    ttl: -1 # 永不过期
     enable: true # 启用缓存
   page-config:
     size: size # 页大小的参数名称
@@ -116,19 +118,32 @@ magic-api:
 
 `magic-api.response` 配置`JSON`序列化格式，值为`magic-script`中的表达式
 
-## response-code <Badge text="1.1.2+" type="error"/>
+## cluster-config <Badge text="1.2.0+" type="error"/>
+### enable
+- 类型: `boolean`
+- 默认值: `false`
+
+`magic-api.cluster-config.enable` 是否开启集群配置
+  
+### instance-id
+- 类型: `String`
+- 默认值: `null`
+
+`magic-api.cluster-config.instance-id` 实例id，要保证每台机器都不同，默认启动后随机生成`uuid`，如果无特殊需要则不需要配置
+
+## response-code-config <Badge text="1.1.2+" type="error"/>
 ### success
 - 类型: `int`
 - 默认值: `1`
- `magic-api.response-code.success` 执行成功的`code`值
+ `magic-api.response-code-config.success` 执行成功的`code`值
 ### invalid
 - 类型: `int`
 - 默认值: `0`
-  `magic-api.response-code.invalid` 参数验证未通过的`code`值
+  `magic-api.response-code-config.invalid` 参数验证未通过的`code`值
 ### exception
 - 类型: `int`
 - 默认值: `-1`
-  `magic-api.response-code.exception` 执行出现异常的`code`值
+  `magic-api.response-code-config.exception` 执行出现异常的`code`值
 ## banner
 - 类型：`boolean`
 - 默认值：`true`

@@ -1,5 +1,16 @@
 # 更新日志
 
+## [v1.2.0]
+- **新增支持集群部署**
+- 新增数据源增删改查接口，可持久化保存数据源
+- 修复在拦截器中抛出异常时，界面不显示结果的BUG
+- 修复`Oracle`查询单行单列值时，返回值带有`ROW_ID`的问题
+- [PR !13 解决swagger文档使用knife4j时不兼容，无法显示接口详情的问题](https://gitee.com/ssssssss-team/magic-api/pulls/13)
+- [PR !14 [!]fix swagger文档使用knife4j时接口文档中query类型参数的数据类型显示不正确的问题（不影响swagger原生UI）](https://gitee.com/ssssssss-team/magic-api/pulls/14)
+- 优化前端代码，在请求时剔除无用字段，避免一些可能存在的错误。
+- 优化后端代码，删除`@Deprecated`方法
+- 迁移`magic-api-spring-boot-starter`、`magic-editor`到`magic-api`仓库中
+
 ## [v1.1.3] 2021.05.18
 - 新增获取函数、接口详情的接口
 - 修复无法创建分组的BUG

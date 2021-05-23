@@ -8,5 +8,8 @@
   "scripts": {
     "dev": "vuepress dev",
     "build": "vuepress build"
+  },
+  "dependencies": {
+    "vuepress-plugin-fulltext-search": "^2.2.0"
   }
 }

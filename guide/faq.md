@@ -1,5 +1,7 @@
 ## 常见问题
 
+- [如何配置JSON日期的格式](#如何配置JSON日期的格式)
+- [出现找不到db模块的错误](#出现找不到db模块的错误)
 - [如何获取RequestBody中的参数](#如何获取requestbody中的参数)
 - [如何获取Header中的参数](#如何获取header中的参数)
 - [如何获取Cookie中的参数](#如何获取cookie中的参数)
@@ -19,6 +21,21 @@
 - [页面加载缓慢](#页面加载缓慢)
 - [脚本内容被转义](#脚本内容被转义)
 - [执行测试无响应](#执行测试无响应)
+
+## 如何配置JSON日期的格式
+使用`Jackson`的配置如下(`Spring Boot`默认使用`Jackson`)：
+```yml
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+```
+其它的自行参考`json`框架配置
+
+## 出现找不到db模块的错误
+目前已知两种情况：
+- 未配置数据源
+- 未引用`spring-boot-starter-jdbc`
 
 ## 如何获取RequestBody中的参数
 脚本中使用`body.xxx`获取`RequestBody`中的参数

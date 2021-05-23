@@ -39,17 +39,8 @@ module.exports = {
 				text : 'spider-flow(Github)',
 				link : 'https://github.com/ssssssss-team/spider-flow'
 			},{
-				text : 'magic-api-spring-boot-starter(Gitee)',
-				link : 'https://gitee.com/ssssssss-team/magic-api-spring-boot-starter'
-			},{
-				text : 'magic-api-spring-boot-starter(Github)',
-				link : 'https://github.com/ssssssss-team/magic-api-spring-boot-starter'
-			},{
 				text : 'magic-script',
 				link : 'https://gitee.com/ssssssss-team/magic-script'
-			},{
-				text : 'magic-editor',
-				link : 'https://gitee.com/ssssssss-team/magic-editor'
 			}]
 		},{
 			text : '加入QQ群',
@@ -79,7 +70,7 @@ module.exports = {
 			},{
 				title : '高级应用',
 				collapsable: false,
-				children: ['custom/vue', 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/authorization', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/resource', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function','custom/language']
+				children: ['custom/vue',`custom/cluster`, 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/authorization', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/resource', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function','custom/language']
 			},{
 				title : 'FAQ',
 				collapsable: false,
@@ -100,6 +91,7 @@ module.exports = {
 				type: "maven",
 				repo: "org.ssssssss/magic-api",
 			}]
-		}]
+		}],
+		['fulltext-search']
 	]
 }

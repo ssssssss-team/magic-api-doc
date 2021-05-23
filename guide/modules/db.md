@@ -48,6 +48,13 @@ return db.page('select * from sys_user');
 ```js
 return db.update('delete from sys_user'); 
 ```
+## insert
+- 入参：`sql`：`String`
+- 入参： `id`： `String`，主键列，可空，如无特殊情况不需要传入
+- 返回值: `Object`
+```js
+return db.insert("insert into sys_user(username,password) values('admin','admin)");
+```
 ## cache
 - 入参：`cacheName`:`String`
 - 入参：`ttl`:`long` 缓存有效期，单位毫秒，可省略，默认为配置的值
@@ -81,6 +88,16 @@ try{
 }catch(e){
     db.rollback();  // 回滚事务
 }
+```
+
+## 列名转换
+- normal    列名保持原样
+- camel     列名使用驼峰命名
+- pascal    列名使用帕斯卡命名
+- upper     列名保持全大写
+- lower     列名保持全小写
+```js
+return db.camel().select('select * from sys_user');
 ```
 
 ## 单表操作API <Badge text="1.0.0+" type="error"/>
