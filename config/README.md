@@ -22,6 +22,8 @@ magic-api:
   sql-column-case: camel #启用驼峰命名转换
   editor-config: classpath:./magic-editor-config.js #编辑器配置
   support-cross-domain: true # 跨域支持，默认开启
+  secret-key: 123456789 # 远程推送时的秘钥，未配置则不开启推送
+  push-path: /_magic-api-sync #远程推送的路径，默认为/_magic-api-sync
   response: |- #配置JSON格式，格式为magic-script中的表达式
     {
       code: code,
@@ -117,6 +119,18 @@ magic-api:
 - 默认值: `null`
 
 `magic-api.response` 配置`JSON`序列化格式，值为`magic-script`中的表达式
+
+## secret-key <Badge text="1.2.1+" type="error"/>
+- 类型: `String`
+- 默认值: `null`
+
+`magic-api.secret-key` 远程推送时的秘钥，未配置则不开启
+
+## push-path <Badge text="1.2.1+" type="error"/>
+- 类型: `String`
+- 默认值: `/_magic-api-sync`
+
+`magic-api.push-path` 远程推送的路径，默认为`/_magic-api-sync`
 
 ## cluster-config <Badge text="1.2.0+" type="error"/>
 ### enable
