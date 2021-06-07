@@ -44,7 +44,7 @@ module.exports = {
 			}]
 		},{
 			text : '加入QQ群',
-			link : 'https://shang.qq.com/wpa/qunwpa?idkey=10faa4cf9743e0aa379a72f2ad12a9e576c81462742143c8f3391b52e8c3ed8d'
+			link : 'https://qm.qq.com/cgi-bin/qm/qr?k=Q6dLmVS8cHwoaaP18A3tteK_o0244e6B&jump_from=webapi'
 		}],
 		sidebar:{
 			'/guide/' : [{
