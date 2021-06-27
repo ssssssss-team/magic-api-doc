@@ -108,6 +108,13 @@ response.addCookies({
 });
 ```
 
+## getOutputStream <Badge text="1.2.3+" type="error"/>
+- 返回值：`OutputStream`
+- 函数说明：获取`ServletOutputStream`
+  
+  ::: warning 提示
+  在调用`getOutputStream`后 返回值应为`response.end()` 告诉框架无需处理返回值。
+  :::
 ## end <Badge text="0.4.0+" type="error"/>
 
 - 返回值：无返回值

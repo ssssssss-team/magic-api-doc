@@ -11,6 +11,7 @@ sidebarDepth: 3
     serverURL: 'http://localhost:9999/',    // 必填
     title: 'magic-api',
     defaultTheme: 'default',
+    defaultExpand: true,
     checkUpdate: true,
     autoSave: true, 
     decorationTimeout: 10000,
@@ -222,6 +223,10 @@ var MAGIC_EDITOR_CONFIG = {
 ## checkUpdate <Badge text="0.7.1+" type="error"/>
 - 类型: `Boolean`
 用于控制是否启用检测更新，默认是`true`
+
+## defaultExpand <Badge text="1.3.0+" type="error"/>
+- 类型: `Boolean`
+  用于控制左侧树是否默认展开，默认是`true`
 
 ## response
 - 类型: `Object`
