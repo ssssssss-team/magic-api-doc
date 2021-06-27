@@ -1,6 +1,6 @@
 # 更新日志
 
-## [v1.3.0]
+## [v1.3.0] 2021.06.28
 - 新增`RequestBody`文档注释、属性校验，`ResponseBody` 文档注释
 - 新增`response`模块的`getOutputStream`方法
 - 新增`UI`配置项`defaultExpand`，用于配置是否默认展开
