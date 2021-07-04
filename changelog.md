@@ -1,4 +1,14 @@
+
 # 更新日志
+
+## [v1.3.1] 2021.07.05
+
+- 新增支持自定义选择接口推送和导出 [#I3TRT4](https://gitee.com/ssssssss-team/magic-api/issues/I3TRT4)
+- 新增国产化数据库人大金仓kingbase方言适配 [#I3YCN2](https://gitee.com/ssssssss-team/magic-api/issues/I3YCN2)
+- 新增主动刷新功能，用于在未开启集群配置且使用同一个存储不能同步的问题。
+- 修复`DEBUG`会造成多次验证的BUG
+- 修复设置参数类型不生效的BUG
+- 优化UI样式，将右上角不常用的图标移至右下角、以及左侧菜单优化
 
 ## [v1.3.0] 2021.06.28
 - 新增`RequestBody`文档注释、属性校验，`ResponseBody` 文档注释

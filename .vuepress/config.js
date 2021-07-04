@@ -43,7 +43,7 @@ module.exports = {
 				link : 'https://gitee.com/ssssssss-team/magic-script'
 			}]
 		},{
-			text : '加入QQ群',
+			text : 'QQ群(739235910)',
 			link : 'https://qm.qq.com/cgi-bin/qm/qr?k=Q6dLmVS8cHwoaaP18A3tteK_o0244e6B&jump_from=webapi'
 		}],
 		sidebar:{
@@ -70,7 +70,7 @@ module.exports = {
 			},{
 				title : '高级应用',
 				collapsable: false,
-				children: ['custom/vue',`custom/cluster`, 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/authorization', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/resource', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function','custom/language']
+				children: ['custom/vue',`custom/cluster`, 'custom/linq', 'custom/json', 'custom/page', 'custom/interceptor', 'custom/authorization', 'custom/cache', 'custom/datasource', 'custom/extension', 'custom/resource', 'custom/module', 'custom/magic', 'custom/swagger', 'custom/sql', 'custom/column', 'custom/function','custom/language', 'custom/dialect']
 			},{
 				title : 'FAQ',
 				collapsable: false,
@@ -85,7 +85,7 @@ module.exports = {
     },
 	plugins : [
 		[require('./plugins/stat')],
-		["lastest-version",{
+		[require('./plugins/lastest'),{
 			repos:[{
 				keywords: 'magic-api-lastest-version',
 				type: "maven",

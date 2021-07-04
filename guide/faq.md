@@ -21,6 +21,7 @@
 - [页面加载缓慢](#页面加载缓慢)
 - [脚本内容被转义](#脚本内容被转义)
 - [执行测试无响应](#执行测试无响应)
+- [访问UI404](#访问UI404)
 
 ## 如何配置JSON日期的格式
 使用`Jackson`的配置如下(`Spring Boot`默认使用`Jackson`)：
@@ -192,3 +193,11 @@ server.compression.min-response-size=256 #大于256kb时压缩
 
 - 使用了Spring Boot 2.3.5版本，升级至2.3.6解决
 - 使用了`nginx`代理，加一条配置`proxy_buffering off;`解决
+
+## 访问UI404
+
+- 请检查访问路径是否正确
+- 请检查`magic-editor`包是否被引入
+- 如果是拉源码运行，则需要编译一下前端。
+- 如果以上确定没问题，请检查应用中是否有关于`mvc`的配置，如果有请检查是否是`extends WebMvcConfigurationSupport`的形式，是的话，改成`implements WebMvcConfigurer`的形式。
+- 如以上问题均不存在，请提[ISSUE](https://gitee.com/ssssssss-team/magic-api/issues) 或加群[739235910](https://qm.qq.com/cgi-bin/qm/qr?k=Q6dLmVS8cHwoaaP18A3tteK_o0244e6B&jump_from=webapi)反馈

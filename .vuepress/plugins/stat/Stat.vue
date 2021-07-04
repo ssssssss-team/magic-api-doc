@@ -5,19 +5,15 @@
 	    name : 'Stat',
         mounted (){
             window._mtac = {};
-            var mta = document.createElement("script");
-            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-            mta.setAttribute("name", "MTAH5");
-            mta.setAttribute("sid", "500724282");
-            mta.setAttribute("cid", "500724283");
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(mta, s);
+            let element = document.createElement("script");
+            element.src = "https://s4.cnzz.com/z_stat.php?id=1280031557&web_id=1280031557";
+            let s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(element, s);
             this.$router.beforeEach((to, from, next) => {
                 try{
-                    MtaH5.clickStat('change',{path:to.path})
-				}catch(e){
-
-				}
+                  window._czc.push(["_trackPageview",to.path])
+                }catch(e){
+                }
                 next()
             })
 
