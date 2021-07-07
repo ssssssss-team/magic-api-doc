@@ -1,8 +1,14 @@
 
 # 更新日志
 
-## [v1.3.1] 2021.07.05
+## [v1.3.2] 2021.07.08
+- 修复单表`API`中`in`方法拼接`SQL`不正确的`BUG`
+- 修复修改分组名称可能出现的空指针异常
+- 修复编辑器不显示`RequestBody`的问题
+- 修复编辑器中请求方法全部显示为`GET`的`BUG`
+- 优化部分`UI`中的英文，改为中文描述
 
+## [v1.3.1] 2021.07.05
 - 新增支持自定义选择接口推送和导出 [#I3TRT4](https://gitee.com/ssssssss-team/magic-api/issues/I3TRT4)
 - 新增国产化数据库人大金仓kingbase方言适配 [#I3YCN2](https://gitee.com/ssssssss-team/magic-api/issues/I3YCN2)
 - 新增主动刷新功能，用于在未开启集群配置且使用同一个存储不能同步的问题。
