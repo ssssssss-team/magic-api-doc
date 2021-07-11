@@ -38,13 +38,13 @@ return db.selectInt(sql);   //返回int
 
 ## 查询Map
 ```javascript
-var sql = "select * from sys_user limit 1";
+var sql = "select * from sys_user";
 return db.selectOne(sql);   //返回Map
 ```
 
 ## 列名转换
 ```javascript
-var sql = "select * from sys_user limit 1";
+var sql = "select * from sys_user";
 return db.upper().selectOne(sql);   //返回Map 并且列名转为大写。
 // 转为小写 采用 db.lower()
 // 保持原样 采用 db.default()
