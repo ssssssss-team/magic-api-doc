@@ -1,4 +1,4 @@
-# assert
+# ~~assert~~ <Badge text="1.4.0+版本移除" type="error"/>
 ## 引用模块
 ```js
 import assert;

@@ -13,6 +13,7 @@
 |break|跳出循环|
 |return|终止当前过程的执行并正常退出到上一个执行过程中|
 |exit|终止当前脚本，并退出返回，如`exit 200,'执行成功',[1,2,3];` v0.5.0中新增|
+|assert|断言 v1.3.4中新增|
 |try|用于捕获可能发生异常的代码块|
 |catch|与try关键字配合使用，当发生异常时执行|
 |finally|与try关键字配合使用，finally块无论发生异常都会执行|
@@ -289,10 +290,11 @@ key2:456
 import 'java.lang.System' as System;//导入静态类并赋值给system作为变量
 import 'javax.sql.DataSource' as ds;//从spring中获取DataSource并将值赋值给ds作为变量
 import 'org.apache.commons.lang3.StringUtils' as string;//导入静态类并赋值给ds作为变量
-
+import 'java.text.*'    //此写法跟Java一致，在1.3.4中新增
 System.out.println('调用System打印');//调用静态方法
 System.out.println(ds);
 System.out.println(string.isBlank('')); //调用静态方法
+System.out.println(new SimpleDateFormat('yyyy-MM-dd').format(new Date())); // 2020-01-01
 ```
 
 ## new创建对象
@@ -325,6 +327,23 @@ for(index in range(1,10)){
     list.add(async (index)=>db.selectInt('select #{index}'));
 }
 return list.map(item=>item.get());  // 循环获取结果
+```
+
+## exit <Badge text="0.5.0+" type="error"/>
+语法格式为 `exit expr[,expr][,expr][,expr][,expr][,expr][,expr]....`
+
+在`magic-api`中只取前三个值，分别对应`code`、`message`、`data`
+
+如：`exit 400,'参数填写有误'`
+
+## assert <Badge text="1.3.4+" type="error"/>
+语法格式为 `assert expr : expr[,expr][,expr][,expr][,expr][,expr][,expr]....`
+如：`assert a == 1 : 400, 'a的值应为1'`
+相当于
+```js
+if(a != 1){
+    exit 400, 'a的值应为1'
+}
 ```
 
 ## 类型转换 <Badge text="0.7.0+" type="error"/>

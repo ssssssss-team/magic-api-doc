@@ -104,6 +104,9 @@ return db.camel().select('select * from sys_user');
 
 操作入口：`db.table('table_name')`
 
+### logic <Badge text="1.3.4+" type="error"/>
+- 作用:设置本查询是带有逻辑删除的,在执行`delete`方法时，会转换为`update`语句，在执行`select`相关方法时，会拼接`logic_field <> logic_value`
+
 ### column
 - 入参：`column`: `String` 列名
 - 作用：设置要查询列的,`select`语句中有效

@@ -13,6 +13,7 @@ sidebarDepth: 3
     defaultTheme: 'default',
     defaultExpand: true,
     checkUpdate: true,
+    blockClose: true,   // 是否阻止离开页面      
     autoSave: true, 
     decorationTimeout: 10000,
     header: {

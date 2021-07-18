@@ -1,6 +1,30 @@
 
 # 更新日志
 
+## [v1.3.4] 2021.07.19
+- 弃用`SSE`改为`WebSocket`通讯，同时支持集群`DEBUG`能力 [#I3ZL4B](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4B)
+- 新增`assert`语法，用于辅助校验参数。[#I3ZL4Q](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4Q)
+- 新增支持`import "xxx.xxx.*"`的语法，导包更方便。[#I3ZL4O](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4O)
+- 新增单表`API`逻辑删除功能 [#I40L8P](https://gitee.com/ssssssss-team/magic-api/issues/I40L8P)
+- 新增提取代码中的`TODO`、`FIXME`的功能 [#I3ZL3W](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL3W)
+- 新增集合扩展去重函数`distinct`
+- 修复在`knife4j`中参数默认值未显示的问题 [#I40BG2](https://gitee.com/ssssssss-team/magic-api/issues/I40BG2)
+- 修复集合`push`函数未生效的`BUG` [#I40NP7](https://gitee.com/ssssssss-team/magic-api/issues/I40NP7)
+- 修复`magic-script`中部分表达式优先级不正确造成的语法解析错误。
+- 优化`magic-script`中的关键词检查，去除不必要的检查造成的语法解析错误。
+- 优化在接口&函数未保存时，在上方tab页显示`*`号，保存后消失 [#I3ZL41](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL41)
+- 优化远程推送的密钥字段，采用`password`控件 [#I3ZL48](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL48)
+- 优化接口&函数&数据源加载，增加`Loading`、无数据提示 [#I3ZSTI](https://gitee.com/ssssssss-team/magic-api/issues/I3ZSTI) [#I3ZSTE](https://gitee.com/ssssssss-team/magic-api/issues/I3ZSTE)
+- 优化顶部Tab页可拖动排序 [#I3ZL47](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL47)
+- 优化新增分组后自动定位到该位置 [#I3ZSTG](https://gitee.com/ssssssss-team/magic-api/issues/I3ZSTG)
+- 优化结果预览功能，强化非`JSON`结果的预览 [#I3ZL4J](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4J)
+- [PR !23 更加精准的端口读取和添加 magic-api showUrl 配置提示](https://gitee.com/ssssssss-team/magic-api/pulls/23)
+- [PR !26 支持gp数据库方言 与PostgreSQL一致](https://gitee.com/ssssssss-team/magic-api/pulls/26)
+
+
+
+
+
 ## [v1.3.3] 2021.07.12
 - 新增复制相对路径功能
 - 新增注释中的`TODO`、`FIXME`高亮
