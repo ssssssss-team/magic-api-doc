@@ -42,6 +42,9 @@ magic-api:
   banner: true # 打印banner
   thread-pool-executor-size: 8 # async语句的线程池大小
   throw-exception: false #执行出错时是否抛出异常
+  crud-config: # CRUD相关配置
+    logic-delete-column: deleted #逻辑删除列
+    logic-delete-value: 1 #逻辑删除值
   cache-config: # 缓存相关配置
     capacity: 10000 #缓存容量
     ttl: -1 # 永不过期
@@ -234,8 +237,17 @@ magic-api:
 - upper (全大写)
 - lower (全小写)
 
+## crud-config <Badge text="1.3.4+" type="error"/>
 
+CRUD相关配置
 
+### logic-delete-column
+
+`magic-api.crud-config.logic-delete-column` 逻辑删除列，在单表`API`中使用`logic`后，删除语句会转为`update`,查询语句会多拼接一个条件
+
+### logic-delete-value
+
+`magic-api.crud-config.logic-delete-column` 逻辑删除值
 ## page-config
 
 分页配置
