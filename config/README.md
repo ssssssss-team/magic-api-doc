@@ -42,6 +42,11 @@ magic-api:
   banner: true # 打印banner
   thread-pool-executor-size: 8 # async语句的线程池大小
   throw-exception: false #执行出错时是否抛出异常
+  backup-config: #备份相关配置
+    max-history: -1 #备份保留天数，-1为永久保留
+    resource-type: file #备份存储方式，默认为文件，可选 database
+    database: magic  #指定数据源（单数据源时无需配置，多数据源时默认使用主数据源，如果存在其他数据源中需要指定。）
+    table-name: magic_api_backup #使用数据库存储备份时的表名
   crud-config: # CRUD相关配置
     logic-delete-column: deleted #逻辑删除列
     logic-delete-value: 1 #逻辑删除值
@@ -135,6 +140,36 @@ magic-api:
 
 `magic-api.push-path` 远程推送的路径，默认为`/_magic-api-sync`
 
+## backup-config <Badge text="1.3.5+" type="error"/>
+### resource-type
+- 类型: `String`
+- 默认值: `file`
+  
+`magic-api.backup-config.resource-type` 备份存储方式，默认为`file`，可选`database`
+### location
+- 类型: `String`
+- 默认值: `/data/magic-api/backup`
+  
+`magic-api.backup-config.resource-type` 备份存储位置
+
+### table-name
+- 类型: `String`
+- 默认值: `null`
+
+`magic-api.backup-config.table-name` 使用数据库时，存储备份的表名
+
+### database
+- 类型: `String`
+- 默认值: `null`
+
+`magic-api.backup-config.database` 指定数据源（单数据源时无需配置，多数据源时默认使用主数据源，如果存在其他数据源中需要指定。）
+
+### max-history
+- 类型: `int`
+- 默认值: `-1`
+
+`magic-api.backup-config.max-history` 备份保留天数，`-1`为永久保留
+  
 ## cluster-config <Badge text="1.2.0+" type="error"/>
 ### enable
 - 类型: `boolean`

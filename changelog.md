@@ -1,6 +1,20 @@
 
 # 更新日志
 
+## [v1.3.5] 2021.07.26
+- [增加Boolean类型的参数定义、`header`定义 PR27](https://gitee.com/ssssssss-team/magic-api/pulls/27)
+- 新增备份最大保留天数配置
+- 新增备份存储方式配置
+- 修复在验证`Body`时，无法修改数组值类型的`BUG`
+- 修复`JS`无法识别`JSON`数值具体类型的问题
+- 修复修改分组时报空指针的`BUG`
+- 修复在`import`接口、函数时，内部使用`exit`未正确返回的问题
+- 修复上传时分组冲突检测不正确的BUG
+- 修复语法高亮中注释未被正确高亮的问题
+- 优化备份判断逻辑，修改为只有脚本部分有变动时才备份。
+- 优化`UI`数据源`Dialog`
+- [优化`header`的`get`方法，解决无法修改`header`参数值类型的问题 PR28](https://gitee.com/ssssssss-team/magic-api/pulls/28)
+
 ## [v1.3.4] 2021.07.19
 - 弃用`SSE`改为`WebSocket`通讯，同时支持集群`DEBUG`能力 [#I3ZL4B](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4B)
 - 新增`assert`语法，用于辅助校验参数。[#I3ZL4Q](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4Q)
@@ -20,9 +34,6 @@
 - 优化结果预览功能，强化非`JSON`结果的预览 [#I3ZL4J](https://gitee.com/ssssssss-team/magic-api/issues/I3ZL4J)
 - [PR !23 更加精准的端口读取和添加 magic-api showUrl 配置提示](https://gitee.com/ssssssss-team/magic-api/pulls/23)
 - [PR !26 支持gp数据库方言 与PostgreSQL一致](https://gitee.com/ssssssss-team/magic-api/pulls/26)
-
-
-
 
 
 ## [v1.3.3] 2021.07.12
