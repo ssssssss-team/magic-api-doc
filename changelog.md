@@ -1,6 +1,49 @@
 
 # 更新日志
 
+## [v1.3.6] 2021.08.02
+- 新增注释补全功能
+- 增加`not_blank`、`not_null`、`is_null`、`is_blank`、`current_timestamp`、`print`等相关函数
+- 修复未改动脚本时无法保存接口的`BUG`
+- 修复注销不应该验证需要登录的问题
+- 修复文件参数必填验证失效的`BUG`
+- 修复在使用过程中`Token`失效后未显示登录框的问题
+- 修复无法删除接口的`BUG`
+- 修复`Body`参数在编辑后丢失配置信息的问题
+- 修复`Redis`模块部分场景无法注册模块的问题
+- 修正删除接口的权限配置错误
+- 修复定义`async`、`select` 字符串时被解析成语句的`BUG`
+- 修复`LINQ` `left join` 缓存不正确的问题 [I42W1F](https://gitee.com/ssssssss-team/magic-api/issues/I42W1F)
+- 修复引用`actuator`组件可能造成的重复注册接口的问题 [I42UYG](https://gitee.com/ssssssss-team/magic-api/issues/I42UYG)
+- 优化`http`模块注册，解决某些场景冲突导致无法启动的问题
+- 优化状态条显示，解决一直显示`开始测试...`的问题
+
+::: tip 提示
+此版本兼容了`magic-script`的`asm`分支，`asm`分支为会将脚本部分编译为字节码运行。
+
+此外还额外支持了`let`、`const`定义变量，以及模板字符串
+
+使用方法如下：
+```xml
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-api-spring-boot-starter</artifactId>
+    <version>1.3.6</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.ssssssss</groupId>
+            <artifactId>magic-script</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-script</artifactId>
+    <version>1.5.0-beta1</version>
+</dependency>
+```
+:::
+
 ## [v1.3.5] 2021.07.26
 - [增加Boolean类型的参数定义、`header`定义 PR27](https://gitee.com/ssssssss-team/magic-api/pulls/27)
 - 新增备份最大保留天数配置

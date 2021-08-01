@@ -17,7 +17,6 @@ magic-api:
   prefix: / # 接口前缀，可以不配置
   auto-import-module: db  # 自动导入的模块
   auto-import-package: java.lang.*,java.util.* #自动导包
-  refresh-interval: 0  #不启用刷新
   allow-override: false #禁止覆盖应用接口
   sql-column-case: camel #启用驼峰命名转换
   editor-config: classpath:./magic-editor-config.js #编辑器配置
@@ -229,13 +228,6 @@ magic-api:
 - 默认值：`db`(默认导入db模块，多个值时用","分隔)
 
 `magic-api.auto-import-module` 默认导入的模块
-
-## refresh-interval <Badge text="0.3.4+" type="error"/>
-
-- 类型：`int`
-- 默认值：`0` （<=0为不启用）
-
-`magic-api.refresh-interval` 自动刷新间隔(单位为秒)，开启后定期从数据库读取接口信息并刷新映射。
 
 ## auto-import-package <Badge text="0.4.0+" type="error"/>
 
