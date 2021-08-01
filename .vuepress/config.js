@@ -26,7 +26,7 @@ module.exports = {
 			}]
 		},{
 			text : '演示地址',
-			link : 'http://140.143.210.90:9999/magic/web'
+			link : 'https://magic-api.ssssssss.org'
 		},{
 			text : '更新日志',
 			link : '/changelog'
