@@ -37,7 +37,7 @@ magic-api:
   response-code-config:
     success: 1 #执行成功的code值
     invalid: 0 #参数验证未通过的code值
-    exception: 1 #执行出现异常的code值
+    exception: -1 #执行出现异常的code值
   banner: true # 打印banner
   thread-pool-executor-size: 8 # async语句的线程池大小
   throw-exception: false #执行出错时是否抛出异常
@@ -149,7 +149,7 @@ magic-api:
 - 类型: `String`
 - 默认值: `/data/magic-api/backup`
   
-`magic-api.backup-config.resource-type` 备份存储位置
+`magic-api.backup-config.location` 备份存储位置
 
 ### table-name
 - 类型: `String`

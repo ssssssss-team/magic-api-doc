@@ -1,6 +1,47 @@
 
 # 更新日志
 
+## [v1.3.7] 2021.08.09
+- 新增事件日志`Tab`页
+- 新增保存成功消息提示
+- 修复集群环境下，修改接口名字可能未同步的`BUG`
+- 修复无法测试`druid`数据源链接的问题
+- 修复在调用Java原生方法只有一个参数且是可变参数时，传入数组参数未被正确处理的`BUG`
+- 修复在结果预览中文件下载未显示文件名的问题
+- 修复`responseBody`属性拷贝丢失，受执行时浅拷贝导致设置了`BaseDefinition`的`name`导致`Swagger`文档生成影响的`BUG`
+- 修复`swagger`文档必填字段未显示的问题
+- 升级`commons-compress`至1.21
+- 优化`UI`底部布局，将右侧按钮挪至左侧，调整窗口最小高度，禁止拖动推送窗口。
+- 优化代码提示、优化代码高亮，兼容`asm`分支
+- 优化代码，兼容从低版本升级上来的参数验证、文档生成。兼容`magic-script`的`asm`分支
+
+### 其它更新
+- 新增支持定义数值时使用`_`分隔(`magic-script` `asm` 分支)
+- 修复`magic-script` `asm`分支中未显示错误信息的问题
+
+::: tip 提示
+
+使用`magic-script` `asm`分支方法如下：
+```xml
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-api-spring-boot-starter</artifactId>
+    <version>1.3.7</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.ssssssss</groupId>
+            <artifactId>magic-script</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-script</artifactId>
+    <version>1.5.0-beta2</version>
+</dependency>
+```
+:::
+
 ## [v1.3.6] 2021.08.02
 - 新增注释补全功能
 - 增加`not_blank`、`not_null`、`is_null`、`is_blank`、`current_timestamp`、`print`等相关函数
