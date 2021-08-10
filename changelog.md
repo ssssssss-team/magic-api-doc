@@ -1,6 +1,35 @@
 
 # 更新日志
 
+## [v1.3.8] 2021.08.11
+- 修复`asm`分支不支持`DEBUG`的`BUG`
+- 修复`asm`分支异常打印可能出现空指针的问题
+- 修复未配置数据源时无法启动的问题
+- 优化代码提示，解决部分场景提升不正确的问题
+- 优化`UI`布局，将接口选项中的+/-移动至左侧
+
+::: tip 提示
+使用`magic-script` `asm`分支方法如下：
+```xml
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-api-spring-boot-starter</artifactId>
+    <version>1.3.8</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.ssssssss</groupId>
+            <artifactId>magic-script</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-script</artifactId>
+    <version>1.5.0-beta3</version>
+</dependency>
+```
+:::
+
 ## [v1.3.7] 2021.08.09
 - 新增事件日志`Tab`页
 - 新增保存成功消息提示
@@ -20,7 +49,6 @@
 - 修复`magic-script` `asm`分支中未显示错误信息的问题
 
 ::: tip 提示
-
 使用`magic-script` `asm`分支方法如下：
 ```xml
 <dependency>
