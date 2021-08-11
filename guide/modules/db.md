@@ -129,8 +129,8 @@ return db.table('sys_user').insert({ user_name : '李富贵', role : 'admin'})
 ### update
 - 入参: `data` : `Map` insert的列和值，可省略(通过column设置)
 ```js
-// update sys_user set user_name = '王二狗' where id = '1'
-return db.table('sys_user').primary('id','1').update({ user_name : '王二狗'})
+// update sys_user set user_name = '王二狗' where id = 1
+return db.table('sys_user').primary('id').update({ id: 1, user_name : '王二狗'})
 ```
 
 ### select
