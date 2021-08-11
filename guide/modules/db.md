@@ -83,10 +83,10 @@ return val;
 var tx = db.transaction();  //开启事务
 try{
     var value = db.update('...');
-    db.commit();    // 提交事务
+    tx.commit();    // 提交事务
     return value;
 }catch(e){
-    db.rollback();  // 回滚事务
+    tx.rollback();  // 回滚事务
 }
 ```
 
