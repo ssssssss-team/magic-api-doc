@@ -1,6 +1,48 @@
 
 # 更新日志
 
+## [v1.3.9] 2021.08.16
+- 新增支持在测试时上传文件
+- 修复`db`模块在切换数据后缓存设置失效的`BUG`
+- 修复部分场景无法查看异常信息的问题：将异常信息改为`WebSocket`通讯
+- 修复数据源必填验证不正确的问题
+- 修复全量推送或上传后`id`发生变化导致后续不能增量推送或上传的问题
+- 优化代码提示，修复部分场景无法提示的问题
+- 优化滚动条样式（美化在火狐浏览器中的样式）
+- 优化复选框样式（解决部分浏览器复选框错位的问题）
+- 优化`UI`数据源编辑页面宽度
+- 优化代码提示，支持`asm`分支的`throw`语句
+
+### 其它更新
+- 新增支持`throw`语法（`asm`分支）
+- 修复`asm`分支部分场景变量作用域不正确的`BUG`
+- 修复`asm`分支不能`DEBUG`的问题
+- 修复`asm`分支获取异常位置不正确的问题
+- 修复`asm`分支可能出现的`ClassNotFoundException`
+
+::: tip 提示
+  使用`magic-script` `asm`分支方法如下：
+```xml
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-api-spring-boot-starter</artifactId>
+    <version>1.3.9</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.ssssssss</groupId>
+            <artifactId>magic-script</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.ssssssss</groupId>
+    <artifactId>magic-script</artifactId>
+    <version>1.5.0-beta4</version>
+</dependency>
+```
+:::
+
+
 ## [v1.3.8] 2021.08.11
 - 修复`asm`分支不支持`DEBUG`的`BUG`
 - 修复`asm`分支异常打印可能出现空指针的问题

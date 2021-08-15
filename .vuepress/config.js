@@ -6,6 +6,7 @@ module.exports = {
 		lineNumbers : true
 	},
 	themeConfig: {
+		logo: '/images/logo-single.png',
 		docsRepo : 'ssssssss-team/magic-api',
 		docsDir : '/',
 		lastUpdated: "上次更新",
