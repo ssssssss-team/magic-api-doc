@@ -1,7 +1,10 @@
 module.exports = {
 	title: 'magic-api',
 	description: '一个接口快速开发框架',
-	head: [["link", {rel: "icon", href: '/favicon.ico'}]],
+	head: [
+		["link", {rel: "icon", href: '/favicon.ico'}],
+		["script", { "crossorigin": "anonymous", async: true, src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9417757127794923" }]
+	],
 	markdown:{
 		lineNumbers : true
 	},
